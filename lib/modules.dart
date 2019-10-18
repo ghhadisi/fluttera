@@ -6,9 +6,11 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttera/main.dart';
 import 'package:fluttera/modules/io.dart';
+import 'package:fluttera/modules/native.dart';
 import 'bean/user_entity.dart';
 import 'bean/user_entity2.dart';
 import 'modules/http.dart';
+import 'modules/image_picker.dart';
 
 
 class Modules extends StatelessWidget {
@@ -67,6 +69,30 @@ class MyHomePage extends StatelessWidget{
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          new ListTile(
+
+            title: Text('get battery module'),
+            onTap: (){
+              _goModule(context,3);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          new ListTile(
+
+            title: Text('image picker'),
+            onTap: (){
+              _goModule(context,4);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
 
@@ -84,6 +110,13 @@ class MyHomePage extends StatelessWidget{
         break;
       case 2:
         Navigator.push(context, new MaterialPageRoute(builder: (context )=>IoModule()));
+        break;
+      case 3:
+        Navigator.push(context, new MaterialPageRoute(builder: (context)=>NativeModule()));
+        break;
+
+      case 4:
+        Navigator.push(context, new MaterialPageRoute(builder: (context)=>ImagePickerModule()));
         break;
     }
   }
