@@ -9,6 +9,7 @@ import 'package:fluttera/modules/io.dart';
 import 'package:fluttera/modules/native.dart';
 import 'bean/user_entity.dart';
 import 'bean/user_entity2.dart';
+import 'modules/compoents.dart';
 import 'modules/http.dart';
 import 'modules/image_picker.dart';
 
@@ -93,6 +94,18 @@ class MyHomePage extends StatelessWidget{
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          new ListTile(
+
+            title: Text('components'),
+            onTap: (){
+              _goModule(context,5);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
 
@@ -117,6 +130,9 @@ class MyHomePage extends StatelessWidget{
 
       case 4:
         Navigator.push(context, new MaterialPageRoute(builder: (context)=>ImagePickerModule()));
+        break;
+      case 5:
+        Navigator.push(context, new MaterialPageRoute(builder: (context)=>Componets()));
         break;
     }
   }

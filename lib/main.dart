@@ -3,6 +3,7 @@ import 'package:fluttera/list.dart';
 import 'package:fluttera/modules.dart';
 
 import 'about.dart';
+import 'modules/compoents.dart';
 
 //void main() => runApp(MyApp());
 
