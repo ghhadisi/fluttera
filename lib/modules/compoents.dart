@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttera/modules/components/gridview.dart';
 
+import 'components/aspect_card.dart';
+import 'components/expand.dart';
 import 'components/image.dart';
+import 'components/stack.dart';
 import 'components/text_container.dart';
 
 class Componets extends StatelessWidget {
@@ -38,6 +42,46 @@ class Componets extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
             trailing: Icon(Icons.call),
           ),
+          new ListTile(
+            title: Text('gridview'),
+            onTap: (){
+              _goModule(context,3);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          new ListTile(
+            title: Text('expand'),
+            onTap: (){
+              _goModule(context,4);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          new ListTile(
+            title: Text('stack'),
+            onTap: (){
+              _goModule(context,5);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          new ListTile(
+            title: Text('aspectradio card'),
+            onTap: (){
+              _goModule(context,6);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -57,6 +101,27 @@ class Componets extends StatelessWidget {
           return ImagePage();
         }));
         break;
+      case 3:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return GridViewPage();
+        }));
+        break;
+      case 4:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return ExpandPage();
+        }));
+        break;
+      case 5:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return StackPage();
+        }));
+        break;
+      case 6:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return AspectCardPage();
+        }));
+        break;
+
     }
   }
 }
