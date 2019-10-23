@@ -28,7 +28,9 @@ class Modules extends StatelessWidget {
         primaryColor: Colors.lightBlue[800],
         accentColor: Colors.cyan[600],
       ),
-
+//      onGenerateRoute: ,
+//    initialRoute: ,
+//    routes: ,
       home: MyHomePage()
     );
   }

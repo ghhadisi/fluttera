@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttera/modules/components/gridview.dart';
 
 import 'components/aspect_card.dart';
+import 'components/bottom_nav_bar.dart';
 import 'components/expand.dart';
 import 'components/image.dart';
 import 'components/stack.dart';
 import 'components/text_container.dart';
+import 'components/wrap.dart';
 
 class Componets extends StatelessWidget {
   @override
@@ -82,6 +84,28 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+          new ListTile(
+            title: Text('wrap'),
+            onTap: (){
+              _goModule(context,7);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          new ListTile(
+            title: Text('BottomNavBarPage'),
+            onTap: (){
+              _goModule(context,8);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
         ],
       ),
     );
@@ -119,6 +143,16 @@ class Componets extends StatelessWidget {
       case 6:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return AspectCardPage();
+        }));
+        break;
+      case 7:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return WrapPage();
+        }));
+        break;
+      case 8:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return BottomNavBarPage();
         }));
         break;
 

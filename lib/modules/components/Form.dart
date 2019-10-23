@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class FormPage extends StatelessWidget {
-
-  String title;
-  FormPage({this.title="表单"});
+  final Map arguments;
+  String title = 'FormPage';
+  FormPage({this.arguments});
 
   @override
   Widget build(BuildContext context) {

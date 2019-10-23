@@ -17,9 +17,9 @@ class NativeModule extends StatelessWidget{
             contentPadding: EdgeInsets.only(left: 20),
             title: Text('get battery'),
             onTap: (){
-              _getBatteryLevel().then((str)=>{
+              _getBatteryLevel().then((str)=>
                 print(str)
-              });
+              );
             },
           ),
         ],
