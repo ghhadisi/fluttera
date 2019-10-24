@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttera/list.dart';
 import 'package:fluttera/modules.dart';
+import 'package:fluttera/modules/navgation/HomePage.dart';
 
 import 'about.dart';
 import 'modules/compoents.dart';
@@ -8,6 +9,8 @@ import 'modules/compoents.dart';
 //void main() => runApp(MyApp());
 
 void main() => runApp(Modules());
+
+//void main() => runApp(HomePage());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

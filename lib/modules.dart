@@ -46,6 +46,24 @@ class MyHomePage extends StatelessWidget{
     return new Scaffold(
       appBar: AppBar(
         title: Text('home'),
+        backgroundColor: Colors.red,
+        leading: IconButton(
+          icon: Icon(Icons.menu,),
+          tooltip: "search",
+          onPressed: (){
+            print('Search Pressed');
+          },
+        ),
+
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.more_horiz),
+              tooltip: "more_horiz",
+              onPressed: (){
+                print('more_horiz Pressed');
+              }
+          ),
+        ],
       ),
       body: new ListView(
         children: <Widget>[

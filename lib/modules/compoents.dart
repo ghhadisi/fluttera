@@ -7,6 +7,7 @@ import 'components/bottom_nav_bar.dart';
 import 'components/expand.dart';
 import 'components/image.dart';
 import 'components/stack.dart';
+import 'components/tabbar.dart';
 import 'components/text_container.dart';
 import 'components/wrap.dart';
 
@@ -106,6 +107,17 @@ class Componets extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
 
+          new ListTile(
+            title: Text('TabBarPage'),
+            onTap: (){
+              _goModule(context,9);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
         ],
       ),
     );
@@ -153,6 +165,12 @@ class Componets extends StatelessWidget {
       case 8:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return BottomNavBarPage();
+        }));
+        break;
+
+      case 9:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return TabBarPage();
         }));
         break;
 
