@@ -4,6 +4,7 @@ import 'package:fluttera/modules/components/gridview.dart';
 
 import 'components/aspect_card.dart';
 import 'components/bottom_nav_bar.dart';
+import 'components/button.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
 import 'components/image.dart';
@@ -130,6 +131,16 @@ class Componets extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
 
+          new ListTile(
+            title: Text('buttons'),
+            onTap: (){
+              _goModule(context,11);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -189,6 +200,11 @@ class Componets extends StatelessWidget {
       case 10:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return DrawerPage();
+        }));
+        break;
+      case 11:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return ButtonsPage();
         }));
         break;
     }
