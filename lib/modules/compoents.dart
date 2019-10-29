@@ -11,6 +11,7 @@ import 'components/image.dart';
 import 'components/stack.dart';
 import 'components/tabbar.dart';
 import 'components/text_container.dart';
+import 'components/textfield_radio_checkbox.dart';
 import 'components/wrap.dart';
 
 class Componets extends StatelessWidget {
@@ -141,6 +142,18 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+
+          new ListTile(
+            title: Text('TextField  Radio  CheckBox'),
+            onTap: (){
+              _goModule(context,12);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -207,6 +220,12 @@ class Componets extends StatelessWidget {
           return ButtonsPage();
         }));
         break;
+      case 12:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return TextFieldRadioCheckBoxPage();
+        }));
+        break;
+
     }
   }
 }
