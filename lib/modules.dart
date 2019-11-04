@@ -57,6 +57,7 @@ class _ModulesState extends State<Modules>{
 
   void _initAsync() async {
     await SpUtil.getInstance();
+    await DirectoryUtil.getInstance();
     _init();
   }
 
