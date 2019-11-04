@@ -3,9 +3,11 @@ import 'dart:core' as prefix0;
 import 'dart:core';
 
 import 'package:dio/dio.dart';
+import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttera/main.dart';
 import 'package:fluttera/modules/io.dart';
+import 'package:fluttera/modules/libs.dart';
 import 'package:fluttera/modules/native.dart';
 import 'bean/user_entity.dart';
 import 'bean/user_entity2.dart';
@@ -14,32 +16,58 @@ import 'modules/http.dart';
 import 'modules/image_picker.dart';
 
 
-class Modules extends StatelessWidget {
-  var _context;
+class Modules extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _ModulesState();
+  }
+
+}
+
+class _ModulesState extends State<Modules>{
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _initAsync();
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
-    _context = context;
     // TODO: implement build
     return new MaterialApp(
-      title: 'modules  flutter a',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+        title: 'modules  flutter a',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
 //        brightness: Brightness.dark,
-        primaryColor: Colors.lightBlue[800],
-        accentColor: Colors.cyan[600],
-      ),
+          primaryColor: Colors.lightBlue[800],
+          accentColor: Colors.cyan[600],
+        ),
 //      onGenerateRoute: ,
 //    initialRoute: ,
 //    routes: ,
-      home: MyHomePage()
+        home: MyHomePage()
     );
   }
 
 
+  void _initAsync() async {
+    await SpUtil.getInstance();
+    _init();
+  }
 
+  void _init() {
 
+  }
 }
 class MyHomePage extends StatelessWidget{
+
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -105,7 +133,7 @@ class MyHomePage extends StatelessWidget{
 
           new ListTile(
 
-            title: Text('image picker'),
+            title: Text('常用库'),
             onTap: (){
               _goModule(context,4);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
@@ -149,7 +177,7 @@ class MyHomePage extends StatelessWidget{
         break;
 
       case 4:
-        Navigator.push(context, new MaterialPageRoute(builder: (context)=>ImagePickerModule()));
+        Navigator.push(context, new MaterialPageRoute(builder: (context)=>LibsPage()));
         break;
       case 5:
         Navigator.push(context, new MaterialPageRoute(builder: (context)=>Componets()));
