@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttera/modules/lib/image.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import 'image_picker.dart';
+import 'lib/image/image_picker.dart';
 import 'lib/flustars.dart';
 
 class LibsPage extends StatelessWidget {

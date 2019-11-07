@@ -13,7 +13,7 @@ import 'bean/user_entity.dart';
 import 'bean/user_entity2.dart';
 import 'modules/compoents.dart';
 import 'modules/http.dart';
-import 'modules/image_picker.dart';
+import 'modules/lib/image/image_picker.dart';
 
 
 class Modules extends StatefulWidget {
