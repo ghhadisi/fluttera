@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttera/modules/lib/image.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'image_picker.dart';
 import 'lib/flustars.dart';
@@ -16,7 +18,7 @@ class LibsPage extends StatelessWidget {
         children: <Widget>[
           new ListTile(
 
-            title: Text('Image picker'),
+            title: Text('Image'),
             onTap: (){
               _goModule(context,1);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
@@ -25,6 +27,7 @@ class LibsPage extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+          Divider(),
           new ListTile(
             leading: Icon(Icons.add,size: 40,),
             title: Text('Flustars'),
@@ -37,6 +40,20 @@ class LibsPage extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
             trailing: Icon(Icons.call),
           ),
+          Divider(),
+          new ListTile(
+            leading: Icon(Icons.add,size: 40,),
+            title: Text('toast'),
+            onTap: (){
+              _goModule(context,3);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+            trailing: Icon(Icons.call),
+          ),
+          Divider(),
         ],
       ),
     );
@@ -48,13 +65,25 @@ class LibsPage extends StatelessWidget {
       case 1:
         Navigator.push(
             context, new MaterialPageRoute(builder: (BuildContext context) {
-          return ImagePickerModule();
+          return ImagePage();
         }));
         break;
       case 2:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return FlustarsPage();
         }));
+        break;
+
+      case 3:
+        Fluttertoast.showToast(
+            msg: "This is Center Short Toast",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIos: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0
+        );
         break;
     }
   }
