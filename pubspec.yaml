@@ -58,6 +58,25 @@ dependencies:
   #https://pub.dev/packages/image_jpeg#-installing-tab-
 #  photo: ^0.4.4
 
+  #image: ^2.1.8
+  #https://pub.dev/packages/image#-installing-tab-
+
+  #flutter_svg: ^0.14.4
+  #https://pub.dev/packages/flutter_svg#-installing-tab-
+
+#  zoomable_image: ^1.2.1
+  #https://pub.dev/packages/zoomable_image
+
+
+#  image_carousel: ^0.4.1
+  #https://pub.dev/packages/image_carousel#-installing-tab-
+
+
+  carousel_slider: ^1.3.1
+#https://pub.dev/packages/carousel_slider#-installing-tab-
+
+#  photo: ^0.4.4
+
   flutter_picker: ^1.1.0
   #https://pub.dev/packages/flutter_picker#-readme-tab-
 

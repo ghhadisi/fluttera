@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'image/carousel_slider.dart';
 import 'image/image_compress.dart';
 import 'image/image_picker.dart';
 import 'image/advance_net_work_image.dart';
 import 'image/cached_network_image.dart';
 import 'image/transparent_image.dart';
+import 'image/zoomable_image.dart';
 
 class ImagePage extends StatefulWidget{
   @override
@@ -104,6 +106,67 @@ class _ImagePageState extends State<ImagePage>{
 
           Divider(),
 
+//          https://pub.dartlang.org/packages/image
+          new ListTile(
+
+            title: Text('image'),
+            subtitle: Text('DART库，提供以各种不同的文件格式加载、保存和操作图像的能力。该库不依赖于DART：IO，因此它可以用于服务器和Web应用程序。'),
+            onTap: (){
+              _goModule(context,6);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+
+          new ListTile(
+//https://pub.dev/packages/zoomable_image#-installing-tab-
+            title: Text('zoomable_image '),
+            subtitle: Text('供图像查看和手势缩放操作功能'),
+            onTap: (){
+              _goModule(context,7);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+
+          new ListTile(
+//https://pub.dev/packages/image_carousel#-installing-tab-
+            title: Text('image_carousel '),
+            subtitle: Text('Flutter图像展示控件，可以左右划动切换上一张下一张图像，还结合了zoomable_image可以点击后缩放查看。支持Asset和网络图像。'),
+            onTap: (){
+              _goModule(context,8);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+
+
+          new ListTile(
+//https://pub.dev/packages/carousel_slider#-installing-tab-
+            title: Text('carousel_slider '),
+            subtitle: Text('一个支持手势划动和自动播放的图像展示控件。'),
+            onTap: (){
+              _goModule(context,9);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
         ],
       ),
     );
@@ -144,6 +207,29 @@ class _ImagePageState extends State<ImagePage>{
         Navigator.push(
             context, new MaterialPageRoute(builder: (BuildContext context) {
           return  ImageCompressPage();
+        }));
+        break;
+
+      case 6:
+//        Navigator.push(
+//            context, new MaterialPageRoute(builder: (BuildContext context) {
+//          return  ImageCompressPage();
+//        }));
+        break;
+
+      case 7:
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (BuildContext context) {
+          return  ZoomableImagePage();
+        }));
+        break;
+      case 8:
+        break;
+
+      case 9:
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (BuildContext context) {
+          return  CarouselSliderPage();
         }));
         break;
     }
