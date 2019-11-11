@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttera/modules/lib/image.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'lib/carousel_slider.dart';
 import 'lib/flutter_spinkit.dart';
 import 'lib/image/image_picker.dart';
 import 'lib/flustars.dart';
@@ -80,6 +81,17 @@ class LibsPage extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
           Divider(),
+
+          new ListTile(
+            leading: Icon(Icons.add,size: 40,),
+            title: Text('carousel_slider'),
+            subtitle: Text('一个支持手势划动和自动播放的图像展示控件'),
+            onTap: (){
+              _goModule(context,7);
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          Divider(),
         ],
       ),
     );
@@ -125,6 +137,12 @@ class LibsPage extends StatelessWidget {
       case 6:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return StaggeredGridPage();
+        }));
+        break;
+
+      case 7:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return CarouselSliderPage();
         }));
         break;
     }

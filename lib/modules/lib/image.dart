@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'image/carousel_slider.dart';
+import 'carousel_slider.dart';
 import 'image/image_compress.dart';
 import 'image/image_picker.dart';
 import 'image/advance_net_work_image.dart';
