@@ -7,8 +7,10 @@ import 'lib/carousel_slider.dart';
 import 'lib/flutter_spinkit.dart';
 import 'lib/image/image_picker.dart';
 import 'lib/flustars.dart';
+import 'lib/msg_engine.dart';
 import 'lib/picker/flutter_picker.dart';
 import 'lib/staggered_grid.dart';
+import 'lib/url_launcher.dart';
 
 class LibsPage extends StatelessWidget {
   @override
@@ -92,6 +94,30 @@ class LibsPage extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
           Divider(),
+
+
+          new ListTile(
+            leading: Icon(Icons.add,size: 40,),
+            title: Text('url_launcher'),
+            subtitle: Text('用于在Android和iOS上启动URL。支持网络，电话，短信和电子邮件方案'),
+            onTap: (){
+              _goModule(context,8);
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          Divider(),
+
+
+          new ListTile(
+            leading: Icon(Icons.add,size: 40,),
+            title: Text('flutter_msg_engine'),
+            subtitle: Text('消息引擎, 注册一个消息，在任何地方响应并处理。。'),
+            onTap: (){
+              _goModule(context,9);
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+          Divider(),
         ],
       ),
     );
@@ -143,6 +169,17 @@ class LibsPage extends StatelessWidget {
       case 7:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return CarouselSliderPage();
+        }));
+        break;
+
+      case 8:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return UrlLauncherPage();
+        }));
+        break;
+      case 9:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return MsgEnginePage();
         }));
         break;
     }

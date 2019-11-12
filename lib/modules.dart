@@ -5,6 +5,7 @@ import 'dart:core';
 import 'package:dio/dio.dart';
 import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_msg_engine/flutter_msg_engine.dart';
 import 'package:fluttera/main.dart';
 import 'package:fluttera/modules/io.dart';
 import 'package:fluttera/modules/libs.dart';
@@ -16,11 +17,20 @@ import 'modules/http.dart';
 import 'modules/lib/image/image_picker.dart';
 
 
-class Modules extends StatefulWidget {
+class Modules extends StatefulWidget implements MsgProcHandler<String>  {
   @override
   State<StatefulWidget> createState() {
+
+    MsgEngine.instance.register(this, 150);
+
     // TODO: implement createState
     return _ModulesState();
+  }
+
+  @override
+  void processMsg(MsgPack<String> msg) {
+    // TODO: implement processMsg
+    print("MyApp: " + msg.data);
   }
 
 }
@@ -32,8 +42,17 @@ class _ModulesState extends State<Modules>{
     // TODO: implement initState
     super.initState();
     _initAsync();
+    MsgEngine.instance.start();
+
+    MsgEngine.instance.onLog = ((MsgEngine engine, String text) {
+      print(text);
+    });
+  }
 
 
+  @override
+  void dispose() {
+    MsgEngine.instance.stop();
   }
 
   @override
