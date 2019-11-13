@@ -1,3 +1,4 @@
+import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttera/list.dart';
 import 'package:fluttera/modules.dart';
@@ -5,12 +6,25 @@ import 'package:fluttera/modules/navgation/HomePage.dart';
 
 import 'about.dart';
 import 'modules/compoents.dart';
+import 'modules/fluro/Application.dart';
+import 'modules/fluro/fluro_app.dart';
+import 'modules/fluro/routes.dart';
 
 //void main() => runApp(MyApp());
 
-void main() => runApp(Modules());
+//void main() => runApp(Modules());
 
 //void main() => runApp(HomePage());
+
+void main(){
+  // 注册 fluro routes
+  Router router = Router();
+  Routes.configureRoutes(router);
+  Application.router = router;
+
+
+  runApp(FluroApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
