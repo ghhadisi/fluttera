@@ -9,6 +9,7 @@ import 'lib/image/image_picker.dart';
 import 'lib/flustars.dart';
 import 'lib/msg_engine.dart';
 import 'lib/picker/flutter_picker.dart';
+import 'lib/rx.dart';
 import 'lib/staggered_grid.dart';
 import 'lib/url_launcher.dart';
 
@@ -118,6 +119,17 @@ class LibsPage extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
           Divider(),
+
+          new ListTile(
+            title: Text('rx'),
+            onTap: (){
+              _goModule(context,10);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -180,6 +192,11 @@ class LibsPage extends StatelessWidget {
       case 9:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return MsgEnginePage();
+        }));
+        break;
+      case 10:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return RxPage();
         }));
         break;
     }

@@ -1,5 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttera/modules/fluro/splash_page.dart';
+
+import 'home_page.dart';
 
 /// 跳转到首页Splash
 var splashHandler = new Handler(

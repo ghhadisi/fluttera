@@ -99,6 +99,17 @@ dependencies:
 
   fluro: "^1.5.1"
   #https://github.com/theyakka/fluro
+
+  rxdart: ^0.22.6
+  #https://pub.dev/packages/rxdart#-installing-tab-
+
+  rx_widgets: ^2.5.0
+  #https://pub.dev/packages/rx_widgets#-installing-tab-
+  #rx_widgets是一个包含基于流的Flutter Widgets和Widget帮助程序/便利类的程序包，它们有助于反应式编程风格，特别是与RxDart和RxCommands结合使用。
+
+  #rx_command: ^4.3.2+1
+  #https://pub.dev/packages/rx_command#-installing-tab-
+  #RxCommand是针对事件处理程序的基于Reactive Extensions（Rx）的抽象。它基于ReactiveUI框架的ReactiveCommand。它大量使用了RxDart包。
 dev_dependencies:
   build_runner: ^1.0.0
   json_serializable: ^3.2.0

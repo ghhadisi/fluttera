@@ -1,10 +1,16 @@
 
-class SplashPag extends StatefulWidget {
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:rxdart/rxdart.dart';
+
+import 'navigator_util.dart';
+
+class SplashPage extends StatefulWidget {
   @override
   _SplashPagState createState() => _SplashPagState();
 }
 
-class _SplashPagState extends State<SplashPag> {
+class _SplashPagState extends State<SplashPage> {
 
   @override
   void initState() {

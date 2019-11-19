@@ -12,19 +12,14 @@ import 'modules/fluro/routes.dart';
 
 //void main() => runApp(MyApp());
 
-//void main() => runApp(Modules());
+void main() => runApp(Modules());
 
 //void main() => runApp(HomePage());
 
-void main(){
-  // 注册 fluro routes
-  Router router = Router();
-  Routes.configureRoutes(router);
-  Application.router = router;
-
-
-  runApp(FluroApp());
-}
+//void main(){
+//  // 注册 fluro routes
+//  runApp(FluroApp());
+//}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
