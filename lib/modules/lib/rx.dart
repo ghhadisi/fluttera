@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttera/modules/lib/rx/rx_data.dart';
+import 'package:fluttera/modules/lib/rx/rx_dart.dart';
 import 'package:fluttera/modules/lib/rx/rx_widgets.dart';
 
 class RxPage extends StatelessWidget{
@@ -67,7 +67,7 @@ class RxPage extends StatelessWidget{
     switch(i){
       case 1:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
-          return RxDataPage();
+          return RxDartPage();
         }));
         break;
       case 2:
