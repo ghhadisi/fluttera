@@ -110,6 +110,9 @@ dependencies:
   #rx_command: ^4.3.2+1
   #https://pub.dev/packages/rx_command#-installing-tab-
   #RxCommand是针对事件处理程序的基于Reactive Extensions（Rx）的抽象。它基于ReactiveUI框架的ReactiveCommand。它大量使用了RxDart包。
+
+  flutter_easyrefresh: ^2.0.4
+  #https://github.com/xuelongqy/flutter_easyrefresh
 dev_dependencies:
   build_runner: ^1.0.0
   json_serializable: ^3.2.0
