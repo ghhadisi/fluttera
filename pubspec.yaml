@@ -116,6 +116,13 @@ dependencies:
 
   flutter_easyrefresh: ^2.0.4
   #https://github.com/xuelongqy/flutter_easyrefresh
+
+
+  flutter_udid: ^1.0.1
+  #https://github.com/GigaDroid/flutter_udid
+
+  flutter_webview_plugin: ^0.3.9+1
+  #https://github.com/fluttercommunity/flutter_webview_plugin/
 dev_dependencies:
   build_runner: ^1.0.0
   json_serializable: ^3.2.0

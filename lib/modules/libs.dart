@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_udid/flutter_udid.dart';
 import 'package:fluttera/modules/lib/image.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -130,6 +131,34 @@ class LibsPage extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          Divider(),
+
+          new ListTile(
+            title: Text('flutter_udid'),
+            subtitle: Text("用于在Android/iOS设备上获取一个持久的 UDID，即使重新安装App"),
+            onTap: (){
+              _goModule(context,11);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          //https://github.com/mogol/flutter_secure_storage
+          new ListTile(
+            title: Text('flutter_secure_storage'),
+            subtitle: Text("提供钥匙串和密钥库存储"),
+            onTap: (){
+              _goModule(context,12);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -198,6 +227,14 @@ class LibsPage extends StatelessWidget {
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return RxPage();
         }));
+        break;
+      case 11:
+          FlutterUdid.udid.then((val){
+            print(val);
+          });
+        break;
+      case 12:
+        //https://github.com/mogol/flutter_secure_storage
         break;
     }
   }
