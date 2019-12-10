@@ -123,6 +123,46 @@ dependencies:
 
   flutter_webview_plugin: ^0.3.9+1
   #https://github.com/fluttercommunity/flutter_webview_plugin/
+
+  #flutter_sticky_header: ^0.4.0
+  #https://github.com/letsar/flutter_sticky_header
+
+  #https://github.com/renefloor/side_header_list_view
+
+  #https://github.com/fluttercommunity/flutter_infinite_listview
+
+
+  #https://github.com/xqwzts/flutter_radial_menu
+
+
+  #https://github.com/hnvn/flutter_flip_panel
+
+#snackbar封装
+  #https://github.com/AndreHaueisen/flushbar
+
+  #https://github.com/Rahiche/stepper_touch
+
+  #https://github.com/rvamsikrishna/flutter_fluid_slider
+
+  #翻页
+  #https://github.com/ariedov/flutter_snaplist
+  #https://github.com/Ivaskuu/tinder_cards
+  #https://github.com/roughike/page-transformer
+  #https://github.com/leocavalcante/page_view_indicator
+  #https://github.com/best-flutter/flutter_swiper
+
+  #内容加载时带有微光效果的组件
+  #https://github.com/hnvn/flutter_shimmer
+
+  #存储
+  #https://github.com/renefloor/flutter_cache_manager
+  #https://github.com/OpenFlutter/mmkv_flutter
+  #https://github.com/mogol/flutter_secure_storage
+
+  #下载
+  #https://github.com/fluttercommunity/flutter_downloader
+
+  #https://github.com/iampawan/Flutter-UI-Kit
 dev_dependencies:
   build_runner: ^1.0.0
   json_serializable: ^3.2.0
