@@ -246,6 +246,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.1"
+  flushbar:
+    dependency: "direct main"
+    description:
+      name: flushbar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.9.1"
   flustars:
     dependency: "direct main"
     description:
@@ -273,7 +280,7 @@ packages:
     source: hosted
     version: "0.1.1"
   flutter_cache_manager:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_cache_manager
       url: "https://pub.dartlang.org"
@@ -314,6 +321,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  flutter_secure_storage:
+    dependency: "direct main"
+    description:
+      name: flutter_secure_storage
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.3.1+1"
   flutter_spinkit:
     dependency: "direct main"
     description:
@@ -508,6 +522,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6+3"
+  mmkv_flutter:
+    dependency: "direct main"
+    description:
+      name: mmkv_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.10"
   node_interop:
     dependency: transitive
     description:

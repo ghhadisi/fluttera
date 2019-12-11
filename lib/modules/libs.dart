@@ -12,6 +12,7 @@ import 'lib/msg_engine.dart';
 import 'lib/picker/flutter_picker.dart';
 import 'lib/rx.dart';
 import 'lib/staggered_grid.dart';
+import 'lib/storage/storage.dart';
 import 'lib/url_launcher.dart';
 
 class LibsPage extends StatelessWidget {
@@ -149,8 +150,8 @@ class LibsPage extends StatelessWidget {
           Divider(),
           //https://github.com/mogol/flutter_secure_storage
           new ListTile(
-            title: Text('flutter_secure_storage'),
-            subtitle: Text("提供钥匙串和密钥库存储"),
+            title: Text('storage'),
+
             onTap: (){
               _goModule(context,12);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
@@ -159,6 +160,9 @@ class LibsPage extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+
+
         ],
       ),
     );
@@ -234,7 +238,9 @@ class LibsPage extends StatelessWidget {
           });
         break;
       case 12:
-        //https://github.com/mogol/flutter_secure_storage
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return StoragePage();
+        }));
         break;
     }
   }
