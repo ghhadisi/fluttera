@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:photo/photo.dart';
 //import 'package:photo/photo.dart';
 //import 'package:photo_manager/photo_manager.dart';
 
@@ -76,9 +77,8 @@ class ImagePickerModuleState extends State<ImagePickerModule>{
 
 
   Future getImage2(BuildContext context,) async {
-//    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
-  /*  List<AssetEntity> imgList = await PhotoPicker.pickAsset(
+/*
+    var imgList = await PhotoPicker.pickAsset(
       context: context,
       // BuildContext requied
 
@@ -123,10 +123,10 @@ class ImagePickerModuleState extends State<ImagePickerModule>{
 
     File firstImge;
     if (imgList !=null && imgList.length >0){
-      firstImge = await _imgList[0].file;
+      firstImge = await imgList[0].file;
     }
     setState(() {
-      _imgList = imgList;
+
       if (firstImge !=null){
         _image = firstImge;
 

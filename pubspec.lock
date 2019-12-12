@@ -599,6 +599,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.0"
+  photo:
+    dependency: "direct main"
+    description:
+      name: photo
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.5"
+  photo_manager:
+    dependency: transitive
+    description:
+      name: photo_manager
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.5"
   platform:
     dependency: transitive
     description:

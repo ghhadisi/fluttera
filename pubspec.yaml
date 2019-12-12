@@ -56,7 +56,7 @@ dependencies:
 
   image_jpeg: ^1.1.1
   #https://pub.dev/packages/image_jpeg#-installing-tab-
-#  photo: ^0.4.4
+#  photo: ^0.4.5
 
   #image: ^2.1.8
   #https://pub.dev/packages/image#-installing-tab-
@@ -162,6 +162,8 @@ dependencies:
   mmkv_flutter: ^1.0.10
   #https://github.com/mogol/flutter_secure_storage
   flutter_secure_storage: ^3.3.1+1
+  #https://pub.dev/packages/file_cache
+  #file_cache: ^0.1.2
 
   #下载
   #https://github.com/fluttercommunity/flutter_downloader

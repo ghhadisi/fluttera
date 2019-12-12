@@ -29,6 +29,7 @@ class LibsPage extends StatelessWidget {
 
             title: Text('Image'),
             onTap: (){
+              _goModule(context,1);
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
