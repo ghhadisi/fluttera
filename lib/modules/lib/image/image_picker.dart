@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:photo/photo.dart';
+//import 'package:photo/photo.dart';
 //import 'package:photo/photo.dart';
 //import 'package:photo_manager/photo_manager.dart';
 
