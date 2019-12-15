@@ -8,7 +8,7 @@ import 'package:rxdart/rxdart.dart';
 //https://github.com/ReactiveX/rxdart
 //https://blog.csdn.net/jielundewode/article/details/94381616
 //https://pub.dev/documentation/rxdart/latest/
-
+//https://www.codercto.com/a/35087.html
 class RxDartPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -260,11 +260,16 @@ class RxDartPage extends StatelessWidget{
     });
   }
 
-  void fromStream(){
+  void fromStreamController(){
     var controller = new StreamController<String>();
     var streamObservable = new Observable(controller.stream);
     streamObservable.listen(print);
     controller.add('aaa');
+  }
+
+  void fromStream(){
+    var obs = Observable(Stream.fromIterable([1,2,3,4,5]));
+    obs.listen(print);
   }
 
   void fromFuture(){
@@ -277,6 +282,12 @@ class RxDartPage extends StatelessWidget{
     var justObservable = Observable<int>.just(42);
     justObservable.listen(print);
   }
+
+  //增强版StreamController——Subject
+//普通广播流控制器：PublishSubject
+  //PublishSubject就是一个普通广播版StreamController，你可以多次收听，默认是sync是false，
+  // 也就是说里面是一个 AsyncBroadcastStreamController 异步广播流。
+
   void publishSubject() {
     //PublishSubject 称为StreamController。其类结构是：Object->Obserable->Subject->PublishSubject. 通过调用Stream方法得到Obserable。
     //规律: 添加数据项之前，有几个监听，那么添加之后就会执行几个
@@ -300,6 +311,7 @@ class RxDartPage extends StatelessWidget{
   }
 
   /*
+  缓存最新一次事件的广播流控制器：BehaviorSubject
   * 我们发现第二个subscriber没有监听到Item1，但是监听到了Item2，**
   * 而且第二个subscriber比第一个subscriber先监听到了Item3。**这是因为，
   * 你没法决定多个监听的服务顺序（实际上对于单个item，总是后加的监听先接收到数据），
@@ -369,6 +381,7 @@ class RxDartPage extends StatelessWidget{
     });
   }
 
+  //让流的“吐”出间隔一段时间：interval
   void intervalTest(){
     var obs = Observable(Stream.fromIterable([1,2,3,4,5]))
         .interval(new Duration(seconds: 1));
@@ -383,6 +396,13 @@ class RxDartPage extends StatelessWidget{
   }
 
 
+  //map方法能够让我们迭代的处理每一个数据并返回一个新的数据
+  void maptTest(){
+    var obs = Observable(Stream.fromIterable([1,2,3,4,5]))
+        .map((item)=>++item);
+
+    obs.listen(print);
+  }
   void  whereTest(){
     var subject = new PublishSubject<int>();
 
@@ -399,6 +419,7 @@ class RxDartPage extends StatelessWidget{
   }
 
 // 乍一看和map差不多，但它更加强大，可以添加元素，修改元素。
+  //expand方法能够让我们把把每个item扩展至多个流
   void expandTest(){
     var list = [1, 8, 9, 20, 36, 68, 99];
     var subject = Observable.fromIterable(list);
@@ -410,12 +431,39 @@ class RxDartPage extends StatelessWidget{
     });
   }
 
-  //every会检查每个item是否符合要求，然后它将会返回一个能够被转化为 Observable 的 AsObservableFuture。
+  //merge方法能够让我们合并多个流,请注意输出。
+  void mergeTest(){
+    var obs = Observable.merge([
+      Stream.fromIterable([1,2,3]),
+      Stream.fromIterable([4,5,6]),
+      Stream.fromIterable([7,8,9]),
+    ]);
+
+    obs.listen(print);
+  }
+
+  //顺序执行多个流：concat
+  //concat方法能够让我们按照顺序执行一组流，当一组流执行完毕后，再开始执行下一组。
+  void contactTest(){
+    var obs = Observable.concat([
+      Stream.fromIterable([1,2,3]),
+      Stream.fromIterable([4,5,6]),
+      Stream.fromIterable([7,8,9]),
+    ]);
+
+    obs.listen(print);
+  }
+  //every会检查每个item是否符合要求，然后它将会返回一个能够被转化为 Observable 的 AsObservableFuture< bool>
   void everyTest(){
     var obs = Observable.fromIterable([1,2,3,4,5]);
     obs.every((x)=> x < 10).asObservable().listen(print);
   }
 
+//Dart中 Observables 默认是 单一订阅 。如果您尝试两次收听它，则会抛出 StateError 。
+// 你可以使用工厂方法或者 asBroadcastStream 将其转化为多订阅流。
+  void asBroadcastStreamTest(){
+    var obs = Observable(Stream.fromIterable([1,2,3,4,5])).asBroadcastStream();
+  }
   //让你可以在map函数中进行异步操作。
   void asyncMapTest(){
 //    Observable<CombinedMessage> getDependendMessages() {
