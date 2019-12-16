@@ -52,6 +52,18 @@ onPressed 点击事件回调
 shape 可以定义 FAB 的形状等
 mini 是否是 mini 类型默认 false
 
+InkWell
+
+
+
+使用 InkWell 时内外层均不建议添加背景色，InkWell 默认的水波纹颜色很浅，背景色会遮挡波纹效果；
+
+通过修改 splashColor: Colors.greenAccent, 属性可以动态修改水波纹的波纹颜色，但如果修改高亮色属性 highlightColor，则相当于修改背景色；
+
+请一定添加 InWell 手势触发事件，如 onTap 等。
+
+
+
 * */
 class ButtonsPage extends StatefulWidget {
   @override
@@ -81,6 +93,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
       appBar: AppBar(
         title: Text('buttons'),
         actions: <Widget>[
+
           IconButton(
             icon: Icon(Icons.save),
 //            color: Colors.red,
@@ -106,6 +119,21 @@ class _ButtonsPageState extends State<ButtonsPage> {
 
       body: Column(
         children: <Widget>[
+          new Container(
+              child: new InkWell(//   highlightColor: Colors.red,
+                splashColor: Colors.greenAccent,
+                onTap: () {
+                  Scaffold.of(context).showSnackBar(new SnackBar(
+                    content: new Text('Tap'),
+                  ));
+                },
+                child: Container(
+                  width: 120.0,
+                  height: 40.0,
+                  child: new Center( child: new Text("测试水波纹"), ),
+                ),
+              )),
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[

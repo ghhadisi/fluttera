@@ -73,7 +73,7 @@ dependencies:
   photo_view: ^0.9.0
   #https://pub.dev/packages/photo_view#-installing-tab-
 
-  image_cropper: ^1.1.1
+#  image_cropper: ^1.1.1
   #https://github.com/hnvn/flutter_image_cropper
 
 

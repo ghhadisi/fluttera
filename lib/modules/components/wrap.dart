@@ -11,7 +11,7 @@ class WrapPage extends StatefulWidget {
   }
 
 }
-
+//Wrap 中内容默认是横向排列，通过调整 direction: Axis.horizontal, 属性修改排列方向；
 class _WrapPageState extends State<WrapPage>{
   @override
   Widget build(BuildContext context) {
@@ -21,8 +21,8 @@ class _WrapPageState extends State<WrapPage>{
         title: Text('wrap'),
       ),
       body: Wrap(
-        spacing: 10,
-        runSpacing: 20,
+        spacing: 10,//当横向排列时 spacing: 10.0, 属性为横向 item 间距
+        runSpacing: 20,//每一行之间的间距；当为纵向排列时，则相反。
 //        verticalDirection: VerticalDirection.up,
 //        runAlignment: WrapAlignment.end,
         textDirection: TextDirection.rtl,

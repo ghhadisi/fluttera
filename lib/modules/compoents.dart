@@ -10,6 +10,7 @@ import 'components/drawer.dart';
 import 'components/expand.dart';
 import 'components/stack.dart';
 import 'components/tabbar.dart';
+import 'components/table_page.dart';
 import 'components/text_container.dart';
 import 'components/textfield_radio_checkbox.dart';
 import 'components/wrap.dart';
@@ -167,6 +168,17 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+          Divider(),
+          new ListTile(
+            title: Text('Table 表格布局'),
+            onTap: (){
+              _goModule(context,14);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -241,6 +253,11 @@ class Componets extends StatelessWidget {
       case 13:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return ListViewPage();
+        }));
+        break;
+      case 14:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return TablePage();
         }));
         break;
 
