@@ -61,12 +61,20 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
+
+  #FadeInImage 图片加载过程中，给用户展示一张默认的图片
+  #使用FadeInImage组件来达到这个功能。FadeInImage能处理内存中，App资源或者网络上的图
   transparent_image: ^1.0.0
+
+
   cached_network_image: ^1.1.1
   image_picker: ^0.6.1+8
 
   photo_view: ^0.9.0
   #https://pub.dev/packages/photo_view#-installing-tab-
+
+  image_cropper: ^1.1.1
+  #https://github.com/hnvn/flutter_image_cropper
 
 
   #image: ^2.1.8
@@ -86,7 +94,10 @@ dependencies:
   carousel_slider: ^1.3.1
 #https://pub.dev/packages/carousel_slider#-installing-tab-
 
-#  photo: ^0.4.4
+#https://github.com/best-flutter/flutter_swiper/blob/master/README-ZH.md
+
+
+  #  photo: ^0.4.4
   # ----------------------image---------------------
 
   flutter_picker: ^1.1.0
