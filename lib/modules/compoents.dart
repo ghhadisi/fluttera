@@ -7,12 +7,12 @@ import 'components/bottom_nav_bar.dart';
 import 'components/button.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
-import 'components/image.dart';
 import 'components/stack.dart';
 import 'components/tabbar.dart';
 import 'components/text_container.dart';
 import 'components/textfield_radio_checkbox.dart';
 import 'components/wrap.dart';
+import 'lib/image.dart';
 
 class Componets extends StatelessWidget {
   @override

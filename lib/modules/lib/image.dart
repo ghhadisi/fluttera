@@ -6,6 +6,7 @@ import 'image/image_compress.dart';
 import 'image/image_picker.dart';
 import 'image/advance_net_work_image.dart';
 import 'image/cached_network_image.dart';
+import 'image/photoview_page.dart';
 import 'image/transparent_image.dart';
 import 'image/zoomable_image.dart';
 
@@ -167,6 +168,20 @@ class _ImagePageState extends State<ImagePage>{
           ),
 
           Divider(),
+          new ListTile(
+//https://pub.dev/packages/photo_view#-readme-tab-
+            title: Text('Photo View'),
+            subtitle: Text(' 简单的可缩放的Image组件'),
+            onTap: (){
+              _goModule(context,10);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
         ],
       ),
     );
@@ -231,6 +246,13 @@ class _ImagePageState extends State<ImagePage>{
             context, new MaterialPageRoute(builder: (BuildContext context) {
           return  CarouselSliderPage();
         }));
+        break;
+      case 10:
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (BuildContext context) {
+          return  PhotoViewPage();
+        }));
+
         break;
     }
   }
