@@ -5,7 +5,8 @@ import 'package:fluttera/modules/components/listview_page.dart';
 
 import 'components/aspect_card.dart';
 import 'components/bottom_nav_bar.dart';
-import 'components/button.dart';
+import 'components/button_inkview.dart';
+import 'components/chip_page.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
 import 'components/stack.dart';
@@ -13,6 +14,7 @@ import 'components/tabbar.dart';
 import 'components/table_page.dart';
 import 'components/text_container.dart';
 import 'components/textfield_radio_checkbox.dart';
+import 'components/visibility_page.dart';
 import 'components/wrap.dart';
 import 'lib/image.dart';
 
@@ -179,6 +181,30 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Visibility'),
+            onTap: (){
+              _goModule(context,15);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Chip'),
+            onTap: (){
+              _goModule(context,16);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -258,6 +284,16 @@ class Componets extends StatelessWidget {
       case 14:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return TablePage();
+        }));
+        break;
+      case 15:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return VisibilityPage();
+        }));
+        break;
+      case 16:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return ChipPage();
         }));
         break;
 
