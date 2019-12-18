@@ -8,7 +8,6 @@ import 'components/bottom_nav_bar.dart';
 import 'components/button_inkview.dart';
 import 'components/chip_page.dart';
 import 'components/bottomsheet_page.dart';
-import 'components/button.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
 import 'components/stack.dart';
@@ -184,29 +183,6 @@ class Componets extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
 
-          Divider(),
-          new ListTile(
-            title: Text('Visibility'),
-            onTap: (){
-              _goModule(context,15);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
-            },
-            contentPadding: EdgeInsets.only(left: 20),
-          ),
-
-          Divider(),
-          new ListTile(
-            title: Text('Chip'),
-            onTap: (){
-              _goModule(context,16);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
-            },
-            contentPadding: EdgeInsets.only(left: 20),
-          ),
 
           Divider(),
           new ListTile(
@@ -219,6 +195,32 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Visibility'),
+            onTap: (){
+              _goModule(context,16);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Chip'),
+            onTap: (){
+              _goModule(context,17);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+
         ],
       ),
     );
@@ -305,12 +307,12 @@ class Componets extends StatelessWidget {
           return BottomSheetPage();
         }));
         break;
-      case 15:
+      case 16:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return VisibilityPage();
         }));
         break;
-      case 16:
+      case 17:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return ChipPage();
         }));
