@@ -4,11 +4,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+/*
+* https://www.imooc.com/article/284287
+*
+*
+* colorBlendMode，在 Image 使用时配合 color 共同使用，可以营造很多特殊效果，包括色度色调等
+* */
 class ImagePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return _ImagePageState3();
+    return _ImagePageState4();
   }
 }
 
@@ -127,5 +133,38 @@ class _ImagePageState extends State<ImagePage> {
     setState(() {
       _image = image;
     });
+  }
+}
+
+class _ImagePageState4 extends State<ImagePage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('image'),
+      ),
+
+      body: _mixImgWid(),
+    );
+  }
+  Widget _mixImgWid() {  return Row(children: <Widget>[
+    Image.asset('assets/1.jpeg',
+        color: Colors.redAccent,
+        width: 80.0,
+        colorBlendMode: BlendMode.modulate),
+    Image.asset('assets/2.jpeg',
+        color: Colors.redAccent,
+        width: 80.0,
+        colorBlendMode: BlendMode.colorBurn),
+    Image.asset('assets/3.jpeg',
+        color: Colors.redAccent,
+        width: 80.0,
+        colorBlendMode: BlendMode.colorDodge),
+    Image.asset('assets/4.jpeg',
+        color: Colors.redAccent,
+        width: 80.0,
+        colorBlendMode: BlendMode.difference)
+  ]);
   }
 }

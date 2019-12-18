@@ -19,6 +19,15 @@ onChanged 改变的时候触发的事件
 activeColor 选中的颜色、背景颜色
 湖北众猿腾网络科技有限公司
 checkColor 选中的颜色、Checkbox 里面对号的颜色
+默认 Checkbox 只有【选中 true】和【未选中 false】两种状态，选中颜色为主题色；
+
+借助 activeColor 可以调整 Checkbox 选中颜色
+
+借助 tristate 为 true 可以有【选中 true】【未选中 false】【value null】三种状态；tristate 为 false 只能有【选中 true】【未选中 false】两种状态；
+
+materialTapTargetSize 为目标与布局大小，默认有 padded 和 shrinkWrap 两种状态；小菜理解 padded 为谷歌设计建议尺寸 48px * 48px，
+shrinkWrap 为目标尺寸缩小到谷歌设计提供的最小值，但在实际效果中差别不大。
+*
 *
 *
 *
@@ -138,6 +147,7 @@ class TextFieldRadioCheckBoxPageState extends State<TextFieldRadioCheckBoxPage>{
           ),
           Checkbox(
             value: this._select,
+            materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             onChanged: (v){
               setState(() {
                 this._select=v;

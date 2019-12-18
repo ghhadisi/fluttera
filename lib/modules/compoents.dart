@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttera/modules/components/gridview.dart';
 import 'package:fluttera/modules/components/listview_page.dart';
 
+import 'components/appbar_page.dart';
 import 'components/aspect_card.dart';
 import 'components/bottom_nav_bar.dart';
 import 'components/button_inkview.dart';
@@ -11,8 +12,10 @@ import 'components/bottomsheet_page.dart';
 import 'components/dialog_page.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
+import 'components/linear_gradient_page.dart';
 import 'components/popupmenu_page.dart';
 import 'components/stack.dart';
+import 'components/statusbar_page.dart';
 import 'components/tabbar.dart';
 import 'components/table_page.dart';
 import 'components/text_container.dart';
@@ -245,6 +248,43 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          Divider(),
+          new ListTile(
+            title: Text('LinearGradient'),
+            onTap: (){
+              _goModule(context,20);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+
+          Divider(),
+          new ListTile(
+            title: Text('AppBar'),
+            onTap: (){
+              _goModule(context,21);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Statusbar'),
+            onTap: (){
+              _goModule(context,22);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -353,7 +393,22 @@ class Componets extends StatelessWidget {
           return DialogPage();
         }));
         break;
+      case 20:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  LinearGradientPage();
+        }));
+        break;
 
+      case 21:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  AppBarPage();
+        }));
+        break;
+      case 22:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  StatubarPage();
+        }));
+        break;
     }
   }
 }
