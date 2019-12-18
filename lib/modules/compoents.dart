@@ -10,6 +10,7 @@ import 'components/chip_page.dart';
 import 'components/bottomsheet_page.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
+import 'components/popupmenu_page.dart';
 import 'components/stack.dart';
 import 'components/tabbar.dart';
 import 'components/table_page.dart';
@@ -220,7 +221,17 @@ class Componets extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
 
-
+          Divider(),
+          new ListTile(
+            title: Text('PopupMenu'),
+            onTap: (){
+              _goModule(context,18);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -315,6 +326,12 @@ class Componets extends StatelessWidget {
       case 17:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return ChipPage();
+        }));
+        break;
+
+      case 18:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return PopupMenuPage();
         }));
         break;
 
