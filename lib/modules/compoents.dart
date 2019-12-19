@@ -12,6 +12,7 @@ import 'components/bottomsheet_page.dart';
 import 'components/dialog_page.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
+import 'components/image.dart';
 import 'components/linear_gradient_page.dart';
 import 'components/popupmenu_page.dart';
 import 'components/stack.dart';
@@ -22,7 +23,7 @@ import 'components/text_container.dart';
 import 'components/textfield_radio_checkbox.dart';
 import 'components/visibility_page.dart';
 import 'components/wrap.dart';
-import 'lib/image.dart';
+
 
 class Componets extends StatelessWidget {
   @override

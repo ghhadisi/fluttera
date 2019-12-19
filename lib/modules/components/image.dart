@@ -148,6 +148,13 @@ class _ImagePageState4 extends State<ImagePage> {
       body: _mixImgWid(),
     );
   }
+
+
+  /*
+  * BlendMode 图片混合模式
+https://www.imooc.com/article/284287
+
+  * */
   Widget _mixImgWid() {  return Row(children: <Widget>[
     Image.asset('assets/1.jpeg',
         color: Colors.redAccent,
