@@ -100,7 +100,8 @@ class TextFieldRadioCheckBoxPageState extends State<TextFieldRadioCheckBoxPage>{
         children: <Widget>[
           TextField(
             decoration: InputDecoration(
-                hintText: "请输入用户名"
+                prefixIcon: Icon(Icons.people),
+                hintText: "请输入用户名_键盘右下角按钮-done",
             ),
             controller: _username,
             onChanged: (value){
@@ -109,6 +110,7 @@ class TextFieldRadioCheckBoxPageState extends State<TextFieldRadioCheckBoxPage>{
               });
             },
 
+              textInputAction: TextInputAction.done
           ),
           SizedBox(height: 10),
           TextField(
@@ -116,17 +118,19 @@ class TextFieldRadioCheckBoxPageState extends State<TextFieldRadioCheckBoxPage>{
               maxLines: 1,
 // obscureText: true,
               decoration: InputDecoration(
-                  hintText: "密码框",
+                  prefix: Icon(Icons.people),
+                  hintText: "密码框_键盘右下角按钮-go",
                   border: OutlineInputBorder()
-              )
+              ),
+              textInputAction: TextInputAction.go
           ),
 
           TextField(
               decoration:InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: "用户名"
-              )
-
+                  labelText: "用户名_键盘右下角按钮-newline"
+              ),
+              textInputAction: TextInputAction.newline,
           ),
           SizedBox(height: 20),
           TextField(
@@ -142,9 +146,41 @@ class TextFieldRadioCheckBoxPageState extends State<TextFieldRadioCheckBoxPage>{
           TextField(
               decoration:InputDecoration(
                   icon: Icon(Icons.people),
-                  hintText: "请输入用户名"
-              )
+                  hintText: "请输入用户名_键盘右下角按钮-next"
+              ),
+              textInputAction: TextInputAction.next
           ),
+
+
+          SizedBox(height: 20),
+          TextField(
+              decoration:InputDecoration(
+                  icon: Icon(Icons.people),
+                  hintText: "请输入用户名_键盘右下角按钮-search"
+              ),
+              textInputAction: TextInputAction.search
+          ),
+
+          SizedBox(height: 20),
+          TextField(
+              decoration:InputDecoration(
+                  icon: Icon(Icons.people),
+                  hintText: "请输入用户名_键盘右下角按钮-send"
+              ),
+              textInputAction: TextInputAction.send
+          ),
+          SizedBox(height: 20),
+          TextField(
+              decoration:InputDecoration(
+                  icon: Icon(Icons.people),
+                  hintText: "请输入用户名_键盘右下角按钮-join"
+              ),
+              textInputAction: TextInputAction.join
+          ),
+/*
+* materialTapTargetSize 为目标与布局大小，默认有 padded 和 shrinkWrap 两种状态；小菜理解 padded 为谷歌设计建议尺寸 48px * 48px，
+* shrinkWrap 为目标尺寸缩小到谷歌设计提供的最小值，但在实际效果中差别不大。
+* */
           Checkbox(
             value: this._select,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,

@@ -9,14 +9,17 @@ import 'components/bottom_nav_bar.dart';
 import 'components/button_inkview.dart';
 import 'components/chip_page.dart';
 import 'components/bottomsheet_page.dart';
+import 'components/default_textstyle_page.dart';
 import 'components/dialog_page.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
+import 'components/expansiontile_page.dart';
 import 'components/image.dart';
 import 'components/linear_gradient_page.dart';
 import 'components/popupmenu_page.dart';
+import 'components/spacer_page.dart';
 import 'components/stack.dart';
-import 'components/statusbar_page.dart';
+import 'components/statusbar_safearea_page.dart';
 import 'components/tabbar.dart';
 import 'components/table_page.dart';
 import 'components/text_container.dart';
@@ -286,6 +289,46 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          Divider(),
+          new ListTile(
+            title: Text('DefaultTextStyle'),
+            subtitle: Text('在当前页面中设置统一的 DefaultTextStyle 默认文本样式'),
+            onTap: (){
+              _goModule(context,23);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('ExpansionTile'),
+            subtitle: Text('一个可向下扩展空间的 Widget'),
+            onTap: (){
+              _goModule(context,24);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+
+          Divider(),
+          new ListTile(
+            title: Text('Spacer'),
+            subtitle: Text('Spacer 小菜的理解是占位组件，创建一个可调节的空间隔，可用于调整 Flex 容器（如行或列）中窗口小部件之间的间距；默认 flex: 1。'),
+            onTap: (){
+              _goModule(context,25);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -408,6 +451,21 @@ class Componets extends StatelessWidget {
       case 22:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return  StatubarPage();
+        }));
+        break;
+      case 23:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  DefaultTextStylePage();
+        }));
+        break;
+      case 24:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  ExpansionTilePage();
+        }));
+        break;
+      case 25:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  SpacerPage();
         }));
         break;
     }
