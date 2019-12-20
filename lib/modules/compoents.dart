@@ -17,6 +17,7 @@ import 'components/expansiontile_page.dart';
 import 'components/image.dart';
 import 'components/linear_gradient_page.dart';
 import 'components/popupmenu_page.dart';
+import 'components/scroll_listgrid_page.dart';
 import 'components/spacer_page.dart';
 import 'components/stack.dart';
 import 'components/statusbar_safearea_page.dart';
@@ -44,9 +45,7 @@ class Componets extends StatelessWidget {
             title: Text('Text and Container'),
             onTap: (){
               _goModule(context,1);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -55,9 +54,7 @@ class Componets extends StatelessWidget {
             title: Text('image'),
             onTap: (){
               _goModule(context,2);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
             trailing: Icon(Icons.call),
@@ -66,9 +63,7 @@ class Componets extends StatelessWidget {
             title: Text('gridview'),
             onTap: (){
               _goModule(context,3);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -76,9 +71,7 @@ class Componets extends StatelessWidget {
             title: Text('expand'),
             onTap: (){
               _goModule(context,4);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -86,9 +79,7 @@ class Componets extends StatelessWidget {
             title: Text('stack'),
             onTap: (){
               _goModule(context,5);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -96,9 +87,7 @@ class Componets extends StatelessWidget {
             title: Text('aspectradio card'),
             onTap: (){
               _goModule(context,6);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -106,9 +95,7 @@ class Componets extends StatelessWidget {
             title: Text('wrap'),
             onTap: (){
               _goModule(context,7);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -117,9 +104,7 @@ class Componets extends StatelessWidget {
             title: Text('BottomNavBarPage'),
             onTap: (){
               _goModule(context,8);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -128,9 +113,7 @@ class Componets extends StatelessWidget {
             title: Text('TabBarPage'),
             onTap: (){
               _goModule(context,9);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -139,9 +122,7 @@ class Componets extends StatelessWidget {
             title: Text('drawer'),
             onTap: (){
               _goModule(context,10);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -150,9 +131,7 @@ class Componets extends StatelessWidget {
             title: Text('buttons'),
             onTap: (){
               _goModule(context,11);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -162,9 +141,7 @@ class Componets extends StatelessWidget {
             title: Text('TextField  Radio  CheckBox'),
             onTap: (){
               _goModule(context,12);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -174,9 +151,7 @@ class Componets extends StatelessWidget {
             title: Text('Listview'),
             onTap: (){
               _goModule(context,13);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -185,9 +160,7 @@ class Componets extends StatelessWidget {
             title: Text('Table 表格布局'),
             onTap: (){
               _goModule(context,14);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -198,9 +171,7 @@ class Componets extends StatelessWidget {
             title: Text('bottomsheet'),
             onTap: (){
               _goModule(context,15);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -210,9 +181,7 @@ class Componets extends StatelessWidget {
             title: Text('Visibility'),
             onTap: (){
               _goModule(context,16);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -222,9 +191,7 @@ class Componets extends StatelessWidget {
             title: Text('Chip'),
             onTap: (){
               _goModule(context,17);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -234,9 +201,7 @@ class Componets extends StatelessWidget {
             title: Text('PopupMenu'),
             onTap: (){
               _goModule(context,18);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -246,9 +211,7 @@ class Componets extends StatelessWidget {
             title: Text('DialogPage'),
             onTap: (){
               _goModule(context,19);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -258,9 +221,7 @@ class Componets extends StatelessWidget {
             title: Text('LinearGradient'),
             onTap: (){
               _goModule(context,20);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -271,9 +232,7 @@ class Componets extends StatelessWidget {
             title: Text('AppBar'),
             onTap: (){
               _goModule(context,21);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -283,9 +242,7 @@ class Componets extends StatelessWidget {
             title: Text('Statusbar'),
             onTap: (){
               _goModule(context,22);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -296,9 +253,7 @@ class Componets extends StatelessWidget {
             subtitle: Text('在当前页面中设置统一的 DefaultTextStyle 默认文本样式'),
             onTap: (){
               _goModule(context,23);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -309,9 +264,7 @@ class Componets extends StatelessWidget {
             subtitle: Text('一个可向下扩展空间的 Widget'),
             onTap: (){
               _goModule(context,24);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -323,9 +276,17 @@ class Componets extends StatelessWidget {
             subtitle: Text('Spacer 小菜的理解是占位组件，创建一个可调节的空间隔，可用于调整 Flex 容器（如行或列）中窗口小部件之间的间距；默认 flex: 1。'),
             onTap: (){
               _goModule(context,25);
-//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
-//                return HttpModule();
-//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Scroll 嵌套Gridview Listview'),
+            subtitle: Text('Page 页面同时用到 GridView 和 ListView 或多个 ListView，此时就会遇到常见的滑动冲突问题'),
+            onTap: (){
+              _goModule(context,26);
+
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
@@ -466,6 +427,11 @@ class Componets extends StatelessWidget {
       case 25:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return  SpacerPage();
+        }));
+        break;
+      case 26:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  ScrollGridListPage();
         }));
         break;
     }
