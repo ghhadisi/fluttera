@@ -33,9 +33,15 @@ class _AboutPageState extends State<About> {
           ),
           new FadeInImage.memoryNetwork(
             placeholder: kTransparentImage,
+            placeholderScale: 2.0,
             image:
             'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490954388598&di=caf0e759c92894df7dd44e99f3de065a&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fbaike%2Fpic%2Fitem%2Fa686c9177f3e6709a81d273e3ec79f3df9dc55d5.jpg',
           ),
+        FadeInImage.assetNetwork(
+            placeholder: 'images/icon_copylink.png',
+            placeholderScale: 2.0,
+            image: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=703702342,1604162245&fm=26&gp=0.jpg'),
+
 
           new CachedNetworkImage(
             imageUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1490954388598&di=caf0e759c92894df7dd44e99f3de065a&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fbaike%2Fpic%2Fitem%2Fa686c9177f3e6709a81d273e3ec79f3df9dc55d5.jpg',

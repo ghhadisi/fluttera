@@ -5,12 +5,14 @@ import 'package:fluttera/modules/components/listview_page.dart';
 
 import 'components/appbar_page.dart';
 import 'components/aspect_card.dart';
+import 'components/aspectradio.dart';
 import 'components/bottom_nav_bar.dart';
 import 'components/button_inkview.dart';
 import 'components/chip_page.dart';
 import 'components/bottomsheet_page.dart';
 import 'components/default_textstyle_page.dart';
 import 'components/dialog_page.dart';
+import 'components/double_back.dart';
 import 'components/drawer.dart';
 import 'components/expand.dart';
 import 'components/expansiontile_page.dart';
@@ -25,6 +27,7 @@ import 'components/tabbar.dart';
 import 'components/table_page.dart';
 import 'components/text_container.dart';
 import 'components/textfield_radio_checkbox.dart';
+import 'components/tooltip.dart';
 import 'components/visibility_page.dart';
 import 'components/wrap.dart';
 
@@ -290,6 +293,39 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+          Divider(),
+          new ListTile(
+            title: Text('听返回导航的 WillPopScope'),
+            subtitle: Text('菜设置在 1500ms 之内连续点击两次弹出提示框'),
+            onTap: (){
+              _goModule(context,27);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('AspectRatio'),
+            subtitle: Text('设置父布局的宽或高可以根据 aspectRatio 展示子布局大小，比例 aspectRatio=width/high，注意 aspectRatio 必须存在且大于 0。'),
+            onTap: (){
+              _goModule(context,28);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('ToolTip'),
+            subtitle: Text('Tooltip 轻量级点击提示'),
+            onTap: (){
+              _goModule(context,29);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -432,6 +468,21 @@ class Componets extends StatelessWidget {
       case 26:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return  ScrollGridListPage();
+        }));
+        break;
+      case 27:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  DoubleBackPage();
+        }));
+        break;
+      case 28:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  AspectRatioPage();
+        }));
+        break;
+      case 29:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  ToolTipPage();
         }));
         break;
     }

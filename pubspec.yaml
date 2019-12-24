@@ -194,6 +194,9 @@ dependencies:
   #https://github.com/fluttercommunity/flutter_downloader
 
   #https://github.com/iampawan/Flutter-UI-Kit
+
+  flutter_custom_dialog: ^1.0.14
+  #https://pub.dev/packages/flutter_custom_dialog#-installing-tab-
 dev_dependencies:
   build_runner: ^1.0.0
   json_serializable: ^3.2.0
