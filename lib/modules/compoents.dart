@@ -27,6 +27,8 @@ import 'components/tabbar.dart';
 import 'components/table_page.dart';
 import 'components/text_container.dart';
 import 'components/textfield_radio_checkbox.dart';
+import 'components/textpainter_span.dart';
+import 'components/toast.dart';
 import 'components/tooltip.dart';
 import 'components/visibility_page.dart';
 import 'components/wrap.dart';
@@ -326,6 +328,30 @@ class Componets extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+
+          Divider(),
+          new ListTile(
+            title: Text('TextPainter 与 TextSpan'),
+            subtitle: Text('  RichText 富文本核心即 TextSpan'),
+            onTap: (){
+              _goModule(context,30);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('Toast'),
+            subtitle: Text('Toast'),
+            onTap: (){
+              _goModule(context,31);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
         ],
       ),
     );
@@ -483,6 +509,17 @@ class Componets extends StatelessWidget {
       case 29:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return  ToolTipPage();
+        }));
+        break;
+
+      case 30:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  TextPainterSpanPage();
+        }));
+        break;
+      case 31:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  ToastPage();
         }));
         break;
     }
