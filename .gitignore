@@ -155,3 +155,4 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 /build
+/.flutter-plugins-dependencies

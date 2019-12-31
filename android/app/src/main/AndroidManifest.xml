@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.hss.fluttera">
+    package="com.hss.fluttera"
+    xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
@@ -10,7 +11,9 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="fluttera"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        >
+        <!--tools:replace="android:appComponentFactory"-->
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
