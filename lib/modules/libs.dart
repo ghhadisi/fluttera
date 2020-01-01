@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_udid/flutter_udid.dart';
 import 'package:fluttera/modules/lib/image.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 
 import 'lib/carousel_slider.dart';
 import 'lib/flutter_spinkit.dart';
@@ -10,6 +11,7 @@ import 'lib/image/image_picker.dart';
 import 'lib/flustars.dart';
 import 'lib/msg_engine.dart';
 import 'lib/picker/flutter_picker.dart';
+import 'lib/provider_page.dart';
 import 'lib/rx.dart';
 import 'lib/staggered_grid.dart';
 import 'lib/storage/storage.dart';
@@ -25,6 +27,7 @@ class LibsPage extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+
           new ListTile(
 
             title: Text('Image'),
@@ -163,7 +166,19 @@ class LibsPage extends StatelessWidget {
           ),
 
 
+          Divider(),
+          //https://github.com/mogol/flutter_secure_storage
+          new ListTile(
+            title: Text('provider'),
 
+            onTap: (){
+              _goModule(context,13);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -241,6 +256,12 @@ class LibsPage extends StatelessWidget {
       case 12:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return StoragePage();
+        }));
+        break;
+
+      case 13:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return ProviderPage();
         }));
         break;
     }

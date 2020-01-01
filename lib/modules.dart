@@ -10,6 +10,7 @@ import 'package:fluttera/main.dart';
 import 'package:fluttera/modules/io.dart';
 import 'package:fluttera/modules/libs.dart';
 import 'package:fluttera/modules/native.dart';
+import 'package:provider/provider.dart';
 import 'bean/user_entity.dart';
 import 'bean/user_entity2.dart';
 import 'modules/compoents.dart';
@@ -69,7 +70,18 @@ class _ModulesState extends State<Modules>{
 //      onGenerateRoute: ,
 //    initialRoute: ,
 //    routes: ,
-        home: MyHomePage()
+//        home: MyHomePage()
+
+//        home: Provider<String>.value(value: "aaaaa",child: MyHomePage(),)
+        home: MultiProvider(providers: [
+          Provider<String>.value(value:'aaaaa'),
+
+          Provider<int>.value(value:123),
+
+        ],child: MyHomePage(),),
+
+
+
     );
   }
 
@@ -115,6 +127,7 @@ class MyHomePage extends StatelessWidget{
       ),
       body: new ListView(
         children: <Widget>[
+          Text('provide str = ${Provider.of<String>(context)}  int = ${Provider.of<int>(context)}'),
           new ListTile(
 
             title: Text('http module'),
