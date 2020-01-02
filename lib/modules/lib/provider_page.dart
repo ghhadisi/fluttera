@@ -35,11 +35,8 @@ class ProviderPage extends StatelessWidget{
           Provider<int>.value(value: 888),
 
         ],
-        child:Column(
-          children: <Widget>[
-            Text('provide str = ${Provider.of<String>(context)}  int = ${Provider.of<int>(context)}'),
-          ],
-        ),),
+        child:ChildView(),
+      ),
 
 
 
@@ -47,6 +44,20 @@ class ProviderPage extends StatelessWidget{
 
 
 
+  }
+
+}
+
+
+class ChildView extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Column(
+      children: <Widget>[
+        Text('provide str = ${Provider.of<String>(context)}  int = ${Provider.of<int>(context)}'),
+      ],
+    );
   }
 
 }
