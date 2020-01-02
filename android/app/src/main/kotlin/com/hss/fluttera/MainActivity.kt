@@ -16,6 +16,8 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugins.GeneratedPluginRegistrant
 
+import com.hss.fluttera.channel.Channels;
+
 class MainActivity: FlutterActivity() {
 
 
@@ -26,7 +28,7 @@ class MainActivity: FlutterActivity() {
     super.onCreate(savedInstanceState)
     GeneratedPluginRegistrant.registerWith(this)
      MethodChannel(getFlutterView(), CHANNEL).setMethodCallHandler(methodCallHandler);
-
+//    Channels().init(this)
   }
 
   private fun getBatteryLevel(): Int {

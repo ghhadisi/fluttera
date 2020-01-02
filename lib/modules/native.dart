@@ -30,6 +30,7 @@ class NativeModule extends StatelessWidget{
   Future<Null>  _getBatteryLevel() async {
     String batteryLevel;
     try {
+//            .invokeMethod('ace_demo_user', {'name': '我不是老猪', 'gender': 1});
       final int result = await platform.invokeMethod('getBatteryLevel');
       batteryLevel = 'Battery level at $result % .';
     } on PlatformException catch (e) {
