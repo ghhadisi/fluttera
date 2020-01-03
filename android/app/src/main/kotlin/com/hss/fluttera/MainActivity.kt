@@ -16,7 +16,7 @@ import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugins.GeneratedPluginRegistrant
 
-import com.hss.fluttera.channel.Channels;
+//import com.hss.fluttera.channel.Channels;
 
 class MainActivity: FlutterActivity() {
 

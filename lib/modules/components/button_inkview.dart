@@ -2,6 +2,70 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /*
+const RaisedButton({
+    Key key,
+    @required VoidCallback onPressed,
+    ValueChanged<bool> onHighlightChanged,
+    ButtonTextTheme textTheme,          // 按钮文字主题
+    Color textColor,                    // 子元素颜色
+    Color disabledTextColor,            // 不可点击时子元素颜色
+    Color color,                        // 按钮背景色
+    Color disabledColor,                // 不可点击时按钮背景色
+    Color highlightColor,               // 点击高亮时按钮背景色
+    Color splashColor,                  // 水波纹颜色
+    Brightness colorBrightness,         // 颜色对比度
+    double elevation,                   // 阴影高度
+    double highlightElevation,          // 高亮时阴影高度
+    double disabledElevation,           // 不可点击时阴影高度
+    EdgeInsetsGeometry padding,         // 子元素周围边距
+    ShapeBorder shape,                  // 按钮样式
+    Clip clipBehavior = Clip.none,      // 抗锯齿剪切效果
+    MaterialTapTargetSize materialTapTargetSize,
+    Duration animationDuration,         // 动画时长
+    Widget child,
+})
+
+const FlatButton({
+    Key key,
+    @required VoidCallback onPressed,
+    ValueChanged<bool> onHighlightChanged,
+    ButtonTextTheme textTheme,          // 按钮文字主题
+    Color textColor,                    // 子元素颜色
+    Color disabledTextColor,            // 不可点击时子元素颜色
+    Color color,                        // 按钮背景色
+    Color disabledColor,                // 不可点击时按钮背景色
+    Color highlightColor,               // 点击高亮时按钮背景色
+    Color splashColor,                  // 水波纹颜色
+    Brightness colorBrightness,         // 颜色对比度
+    EdgeInsetsGeometry padding,         // 子元素周围边距
+    ShapeBorder shape,                  // 按钮样式
+    Clip clipBehavior = Clip.none,      // 抗锯齿剪切效果
+    MaterialTapTargetSize materialTapTargetSize,
+    @required Widget child,
+  })
+
+const OutlineButton({
+    Key key,
+    @required VoidCallback onPressed,
+    ButtonTextTheme textTheme,          // 按钮文字主题
+    Color textColor,                    // 文字颜色
+    Color disabledTextColor,            // 不可点击时文字颜色
+    Color color,                        // 按钮背景色
+    Color highlightColor,               // 高亮时颜色
+    Color splashColor,                  // 水波纹颜色
+    double highlightElevation,          // 高亮时阴影高度
+    this.borderSide,                    // 边框样式
+    this.disabledBorderColor,           // 不可点击时边框颜色
+    this.highlightedBorderColor,        // 高亮时边框颜色
+    EdgeInsetsGeometry padding,         // 内容周围边距
+    ShapeBorder shape,                  // 按钮样式
+    Clip clipBehavior = Clip.none,      // 抗锯齿剪切效果
+    Widget child,
+})
+
+
+
+
 RaisedButton ：凸起的按钮，其实就是 Material Design 风格的 Button
 FlatButton ：扁平化的按钮
 OutlineButton：线框按钮
@@ -71,38 +135,35 @@ class ButtonsPage extends StatefulWidget {
     // TODO: implement createState
     return _ButtonsPageState();
   }
-
 }
 
 class _ButtonsPageState extends State<ButtonsPage> {
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
 
-
       floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add,color: Colors.black,size: 40,),
-          onPressed: (){
+          child: Icon(
+            Icons.add,
+            color: Colors.black,
+            size: 40,
+          ),
+          onPressed: () {
             print('FloatingActionButton');
           },
-          backgroundColor: Colors.yellow
-      ),
+          backgroundColor: Colors.yellow),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       appBar: AppBar(
         title: Text('buttons'),
         actions: <Widget>[
-
           IconButton(
             icon: Icon(Icons.save),
 //            color: Colors.red,
             iconSize: 36,
             hoverColor: Colors.blue,
             focusColor: Colors.amber,
-            onPressed: (){
-
-            },
+            onPressed: () {},
           ),
           IconButton(
             icon: Icon(Icons.scanner),
@@ -110,54 +171,76 @@ class _ButtonsPageState extends State<ButtonsPage> {
             iconSize: 36,
             hoverColor: Colors.blue,
             focusColor: Colors.amber,
-            onPressed: (){
-
-            },
+            onPressed: () {},
           ),
         ],
       ),
-
-      body: Column(
-        children: <Widget>[
-          new Container(
-              child: new InkWell(//   highlightColor: Colors.red,
-                splashColor: Colors.greenAccent,
-                onTap: () {
-                  Scaffold.of(context).showSnackBar(new SnackBar(
-                    content: new Text('Tap'),
-                  ));
-                },
-                child: Container(
-                  width: 120.0,
-                  height: 40.0,
-                  child: new Center( child: new Text("测试水波纹"), ),
-                ),
-              )),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              RaisedButton(
-                child: Text('普通按钮'),
-                onPressed: (){
-
-                },
-              ),
-
-              SizedBox(width: 20),
-              RaisedButton(
-                child: Text('有颜色的按钮'),
-                textColor: Colors.white,
-                color: Colors.blue,
-                onPressed: () {
-                  print('点击了');
-                },
-              ),
+      body: Column(children: <Widget>[
+        new Container(
+            child: new InkWell(
+          //   highlightColor: Colors.red,
+          splashColor: Colors.greenAccent,
+          onTap: () {
+            Scaffold.of(context).showSnackBar(new SnackBar(
+              content: new Text('Tap'),
+            ));
+          },
+          child: Container(
+            width: 120.0,
+            height: 40.0,
+            child: new Center(
+              child: new Text("InkWell 测试水波纹"),
+            ),
+          ),
+        )),
+        Row(
+          children: <Widget>[
+            RaisedButton.icon(icon: Icon(Icons.ac_unit), label: Text('RaisedButton'),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))), onPressed: () => {}),
+            FlatButton.icon(icon: Icon(Icons.ac_unit), label: Text('FlatButton'),
+                padding: EdgeInsets.all(16.0),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))), onPressed: () => {}),
+          ],
+        ),
 
 
-              SizedBox(width: 20),
-              RaisedButton(
-                child: Text('阴影按钮'),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            RaisedButton(
+              child: Text('普通按钮'),
+              onPressed: () {},
+            ),
+            SizedBox(width: 20),
+            RaisedButton(
+              child: Text('有颜色的按钮'),
+              textColor: Colors.white,
+              color: Colors.blue,
+              onPressed: () {
+                print('点击了');
+              },
+            ),
+            SizedBox(width: 20),
+            RaisedButton(
+              child: Text('阴影按钮'),
+              textColor: Colors.white,
+              color: Colors.blue,
+              elevation: 10,
+              onPressed: () {
+                print('点击了');
+              },
+            ),
+          ],
+        ),
+        SizedBox(height: 40),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              width: 200,
+              height: 60,
+              child: RaisedButton(
+                child: Text('有宽高的按钮'),
                 textColor: Colors.white,
                 color: Colors.blue,
                 elevation: 10,
@@ -165,200 +248,157 @@ class _ButtonsPageState extends State<ButtonsPage> {
                   print('点击了');
                 },
               ),
-
-            ],
-          ),
-
-          SizedBox(height: 40),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                width: 200,
-                height: 60,
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            RaisedButton(
+                child: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
+                  Padding(
+                      child: Icon(Icons.ac_unit),
+                      padding: EdgeInsets.only(right: 10.0)),
+                  Text('RaisedButton')
+                ]),
+                textColor: Colors.deepPurple,
+                onPressed: () => {}
+                )
+          ],
+        ),
+        SizedBox(height: 40),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(
+                    left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
                 child: RaisedButton(
-                  child: Text('有宽高的按钮'),
+                  child: Text('全屏按钮'),
                   textColor: Colors.white,
                   color: Colors.blue,
-                  elevation:10,
+                  elevation: 10,
                   onPressed: () {
                     print('点击了');
                   },
                 ),
               ),
-            ],
-          ),
-
-
-          SizedBox(height: 40),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-
-                  child: Container(
-                    margin: EdgeInsets.only(left:30.0,top:0.0,right:30.0,bottom:0.0),
-                    child: RaisedButton(
-                      child: Text('全屏按钮'),
-                      textColor: Colors.white,
-                      color: Colors.blue,
-                      elevation:10,
-                      onPressed: () {
-                        print('点击了');
-                      },
-                    ),
-                  ),
-                ),
-              ],
-          ),
-
-          SizedBox(height: 40),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-
-                child: Container(
-                  margin: EdgeInsets.only(left:30.0,top:0.0,right:30.0,bottom:0.0),
-                  child: RaisedButton(
-                    child: Text('带圆角的按钮'),
-                    textColor: Colors.white,
-                    color: Colors.blue,
-                    elevation:10,
-                    onPressed: () {
-                      print('点击了');
-                    },
-                    shape: RoundedRectangleBorder(
-                        borderRadius:BorderRadius.circular(15),
-                    ),
+            ),
+          ],
+        ),
+        SizedBox(height: 40),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(
+                    left: 30.0, top: 0.0, right: 30.0, bottom: 0.0),
+                child: RaisedButton(
+                  child: Text('带圆角的按钮'),
+                  textColor: Colors.white,
+                  color: Colors.blue,
+                  elevation: 10,
+                  onPressed: () {
+                    print('点击了');
+                  },
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
               ),
-            ],
-          ),
-
-          SizedBox(height: 10),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-
-            children: <Widget>[
-              Container(
-                height: 80,
-                child: RaisedButton(
+            ),
+          ],
+        ),
+        SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              height: 80,
+              child: RaisedButton(
                   child: Text('圆形按钮'),
                   color: Colors.blue,
                   textColor: Colors.white,
                   elevation: 20,
                   splashColor: Colors.red,
-                  shape:
-                      CircleBorder(side: BorderSide(color: Colors.white)),
+                  shape: CircleBorder(side: BorderSide(color: Colors.white)),
                   onPressed: () {
                     print("圆形按钮");
                   }),
-              ),
-
-
-              FlatButton(
+            ),
+            FlatButton(
+              child: Text("按钮"),
+              color: Colors.blue,
+              textColor: Colors.yellow,
+              onPressed: () {
+                print('FlatButton');
+              },
+            ),
+            SizedBox(width: 10),
+            OutlineButton(
                 child: Text("按钮"),
-                color: Colors.blue,
-                textColor: Colors.yellow,
+                //  color: Colors.red,  //没有效果
+                //  textColor: Colors.yellow,
                 onPressed: () {
                   print('FlatButton');
-                },
-              ),
-
-              SizedBox(width: 10),
-
-              OutlineButton(
-                  child: Text("按钮"),
-                  //  color: Colors.red,  //没有效果
-                  //  textColor: Colors.yellow,
+                })
+          ],
+        ),
+        SizedBox(height: 10),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ButtonBar(
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('登录'),
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  elevation: 20,
                   onPressed: () {
-                    print('FlatButton');
-                  })
-
-            ],
-          ),
-
-          SizedBox(height: 10),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-
-            children: <Widget>[
-              ButtonBar(
-
-                children: <Widget>[
-                  RaisedButton(
-                    child: Text('登录'),
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    elevation: 20,
-                    onPressed: () {
-                      print("宽度高度");
-                    },
-                  ),
-                  RaisedButton(
-                    child: Text('注册'),
-                    color: Colors.blue,
-                    textColor: Colors.white,
-                    elevation: 20,
-                    onPressed: () {
-                      print("宽度高度");
-                    },
-                  ),
-                ],
-              ),
-            ],
-          ),
-
-
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  margin: EdgeInsets.all(20),
-                  height: 50,
-                  child: OutlineButton(child: Text("注册"), onPressed: () {}),
+                    print("宽度高度");
+                  },
                 ),
-              )
-            ],
-          ),
-
-        ]
-      ),
+                RaisedButton(
+                  child: Text('注册'),
+                  color: Colors.blue,
+                  textColor: Colors.white,
+                  elevation: 20,
+                  onPressed: () {
+                    print("宽度高度");
+                  },
+                ),
+              ],
+            ),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.all(20),
+                height: 50,
+                child: OutlineButton(child: Text("注册"), onPressed: () {}),
+              ),
+            )
+          ],
+        ),
+      ]),
     );
   }
-
 }
 
-
 class _ButtonsPageState2 extends State<ButtonsPage> {
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-
       appBar: AppBar(
         title: Text('buttons'),
-        actions: <Widget>[
-        ],
+        actions: <Widget>[],
       ),
-
-      body: Column(
-          children: <Widget>[
-
-
-          ]
-      ),
+      body: Column(children: <Widget>[]),
     );
   }
-
 }

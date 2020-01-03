@@ -4,9 +4,11 @@ import 'package:fluttera/modules/components/gridview.dart';
 import 'package:fluttera/modules/components/listview_page.dart';
 
 import 'components/appbar_page.dart';
+import 'components/appbar_sliver_page.dart';
 import 'components/aspect_card.dart';
 import 'components/aspectradio.dart';
 import 'components/bottom_nav_bar.dart';
+import 'components/box_page.dart';
 import 'components/button_inkview.dart';
 import 'components/chip_page.dart';
 import 'components/bottomsheet_page.dart';
@@ -352,6 +354,27 @@ class Componets extends StatelessWidget {
             contentPadding: EdgeInsets.only(left: 20),
           ),
 
+          Divider(),
+          new ListTile(
+            title: Text('SliverAppBar'),
+            subtitle: Text('可折叠状态栏'),
+            onTap: (){
+              _goModule(context,32);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
+
+          Divider(),
+          new ListTile(
+            title: Text('box'),
+//            subtitle: Text('可折叠状态栏'),
+            onTap: (){
+              _goModule(context,33);
+
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -522,6 +545,20 @@ class Componets extends StatelessWidget {
           return  ToastPage();
         }));
         break;
+      case 32:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  AppBarSliverPage();
+        }));
+        break;
+
+      case 33:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return  BoxPage();
+        }));
+        break;
     }
   }
+
+
+
 }
