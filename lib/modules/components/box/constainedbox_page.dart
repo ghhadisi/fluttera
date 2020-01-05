@@ -61,7 +61,7 @@ class ConstrainedBoxPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return ConstrainedBoxPageState3();
+    return ConstrainedBoxPageState6();
   }
 }
 
@@ -164,5 +164,121 @@ class ConstrainedBoxPageState3 extends State<ConstrainedBoxPage> {
                     'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
       ]),
     );
+  }
+}
+
+/*
+BoxConstraints.tightForFinite()
+.tightForFinite 与 .tightFor 类似，默认最大宽高为无限，最小宽高为 0.0，
+其判断的是设置宽高是否为无限，不是 double.infinity
+则 minWidth == maxWidth == width && maxWidth == maxHeight == height 进行约束；
+
+
+
+* */
+class ConstrainedBoxPageState4 extends State<ConstrainedBoxPage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('ConstrainedBox'),
+        ),
+        body: Column(
+          children: <Widget>[
+            ConstrainedBox(
+                constraints: BoxConstraints.tightForFinite(),
+                child: Container(
+                    color: Colors.teal.withOpacity(0.4),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+            ConstrainedBox(
+                constraints:
+                    BoxConstraints.tightForFinite(width: 110.0, height: 120.0),
+                child: Container(
+                    color: Colors.purple.withOpacity(0.4),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+          ],
+        ));
+  }
+}
+
+/*
+BoxConstraints.loose()
+.loose 方式限制给定 Size 大小，minWidth / minHeight 均为 0.0，最大宽高为 Size 大小；
+其中整体约束由 Size 限制，实际展示与子 Widget 大小相关；
+
+
+* */
+class ConstrainedBoxPageState5 extends State<ConstrainedBoxPage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('ConstrainedBox'),
+        ),
+        body: Column(
+          children: <Widget>[
+            ConstrainedBox(
+                constraints: BoxConstraints.loose(Size(110.0, 150.0)),
+                child: Container(
+                    color: Colors.purple.withOpacity(0.4),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+            ConstrainedBox(
+                constraints: BoxConstraints.loose(Size(110.0, 150.0)),
+                child: Container(
+                    width: 200.0,
+                    height: 200.0,
+                    color: Colors.grey.withOpacity(0.6),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+            ConstrainedBox(
+                constraints: BoxConstraints.loose(Size(110.0, 120.0)),
+                child: Container(
+                    width: 100.0,
+                    height: 100.0,
+                    color: Colors.green.withOpacity(0.6),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+          ],
+        ));
+  }
+}
+
+/*
+BoxConstraints.expand()
+      大部分 .expand 方式是填充方式，默认填满父 Widget，若不设置宽高，默认 minWidth == maxWidth == double.infinity
+      && minHeight == maxHeight == double.infinity，使用时注意父类约束；
+
+
+
+* */
+class ConstrainedBoxPageState6 extends State<ConstrainedBoxPage> {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('ConstrainedBox'),
+        ),
+        body: Row(
+          children: <Widget>[
+            ConstrainedBox(
+                constraints: BoxConstraints.expand(),
+                child: Container(
+                    color: Colors.teal.withOpacity(0.4),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+            ConstrainedBox(
+                constraints: BoxConstraints.expand(width: 110.0, height: 150.0),
+                child: Container(
+                    color: Colors.purple.withOpacity(0.4),
+                    child: Text(
+                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+          ],
+        ));
   }
 }
