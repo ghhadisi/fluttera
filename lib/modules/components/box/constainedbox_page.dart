@@ -61,7 +61,7 @@ class ConstrainedBoxPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    return ConstrainedBoxPageState6();
+    return ConstrainedBoxPageState();
   }
 }
 
@@ -266,12 +266,12 @@ class ConstrainedBoxPageState6 extends State<ConstrainedBoxPage> {
         ),
         body: Row(
           children: <Widget>[
-            ConstrainedBox(
-                constraints: BoxConstraints.expand(),
-                child: Container(
-                    color: Colors.teal.withOpacity(0.4),
-                    child: Text(
-                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
+//            ConstrainedBox(
+//                constraints: BoxConstraints.expand(),
+//                child: Container(
+//                    color: Colors.teal.withOpacity(0.4),
+//                    child: Text(
+//                        'ConstrainedBox: A widget that imposes additional constraints on its child.'))),
             ConstrainedBox(
                 constraints: BoxConstraints.expand(width: 110.0, height: 150.0),
                 child: Container(
