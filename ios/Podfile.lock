@@ -1,0 +1,135 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_aes (0.0.1):
+    - Flutter
+  - flutter_custom_dialog (0.0.1):
+    - Flutter
+  - flutter_secure_storage (3.3.1):
+    - Flutter
+  - flutter_udid (0.0.1):
+    - Flutter
+    - SAMKeychain
+  - flutter_webview_plugin (0.0.1):
+    - Flutter
+  - fluttertoast (0.0.2):
+    - Flutter
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - image_jpeg (0.0.1):
+    - Flutter
+  - image_picker (0.0.1):
+    - Flutter
+  - MMKV (1.0.23)
+  - mmkv_flutter (0.0.1):
+    - Flutter
+    - MMKV
+  - path_provider (0.0.1):
+    - Flutter
+  - SAMKeychain (1.5.3)
+  - shared_preferences (0.0.1):
+    - Flutter
+  - shared_preferences_macos (0.0.1):
+    - Flutter
+  - shared_preferences_web (0.0.1):
+    - Flutter
+  - sqflite (0.0.1):
+    - Flutter
+    - FMDB (~> 2.7.2)
+  - url_launcher (0.0.1):
+    - Flutter
+  - url_launcher_macos (0.0.1):
+    - Flutter
+  - url_launcher_web (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - flutter_aes (from `.symlinks/plugins/flutter_aes/ios`)
+  - flutter_custom_dialog (from `.symlinks/plugins/flutter_custom_dialog/ios`)
+  - flutter_secure_storage (from `.symlinks/plugins/flutter_secure_storage/ios`)
+  - flutter_udid (from `.symlinks/plugins/flutter_udid/ios`)
+  - flutter_webview_plugin (from `.symlinks/plugins/flutter_webview_plugin/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - image_jpeg (from `.symlinks/plugins/image_jpeg/ios`)
+  - image_picker (from `.symlinks/plugins/image_picker/ios`)
+  - mmkv_flutter (from `.symlinks/plugins/mmkv_flutter/ios`)
+  - path_provider (from `.symlinks/plugins/path_provider/ios`)
+  - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
+  - shared_preferences_macos (from `.symlinks/plugins/shared_preferences_macos/ios`)
+  - shared_preferences_web (from `.symlinks/plugins/shared_preferences_web/ios`)
+  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+  - url_launcher_macos (from `.symlinks/plugins/url_launcher_macos/ios`)
+  - url_launcher_web (from `.symlinks/plugins/url_launcher_web/ios`)
+
+SPEC REPOS:
+  trunk:
+    - FMDB
+    - MMKV
+    - SAMKeychain
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  flutter_aes:
+    :path: ".symlinks/plugins/flutter_aes/ios"
+  flutter_custom_dialog:
+    :path: ".symlinks/plugins/flutter_custom_dialog/ios"
+  flutter_secure_storage:
+    :path: ".symlinks/plugins/flutter_secure_storage/ios"
+  flutter_udid:
+    :path: ".symlinks/plugins/flutter_udid/ios"
+  flutter_webview_plugin:
+    :path: ".symlinks/plugins/flutter_webview_plugin/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
+  image_jpeg:
+    :path: ".symlinks/plugins/image_jpeg/ios"
+  image_picker:
+    :path: ".symlinks/plugins/image_picker/ios"
+  mmkv_flutter:
+    :path: ".symlinks/plugins/mmkv_flutter/ios"
+  path_provider:
+    :path: ".symlinks/plugins/path_provider/ios"
+  shared_preferences:
+    :path: ".symlinks/plugins/shared_preferences/ios"
+  shared_preferences_macos:
+    :path: ".symlinks/plugins/shared_preferences_macos/ios"
+  shared_preferences_web:
+    :path: ".symlinks/plugins/shared_preferences_web/ios"
+  sqflite:
+    :path: ".symlinks/plugins/sqflite/ios"
+  url_launcher:
+    :path: ".symlinks/plugins/url_launcher/ios"
+  url_launcher_macos:
+    :path: ".symlinks/plugins/url_launcher_macos/ios"
+  url_launcher_web:
+    :path: ".symlinks/plugins/url_launcher_web/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  flutter_aes: 596f210eefb3d17cd25805d5b46f56ef1a1f2e16
+  flutter_custom_dialog: c0d222a3c35af5b57581e54ef8784c94037cd2ec
+  flutter_secure_storage: 7953c38a04c3fdbb00571bcd87d8e3b5ceb9daec
+  flutter_udid: c9d59b0a440e137882faa5cf53a3501e906fb8c2
+  flutter_webview_plugin: ed9e8a6a96baf0c867e90e1bce2673913eeac694
+  fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  image_jpeg: 9701349a66166fcdeb83098dbef736036c6dc141
+  image_picker: e3eacd46b94694dde7cf2705955cece853aa1a8f
+  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
+  mmkv_flutter: 511886651aef2c8e65402030d6517602776e8681
+  path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  shared_preferences: 430726339841afefe5142b9c1f50cb6bd7793e01
+  shared_preferences_macos: f3f29b71ccbb56bf40c9dd6396c9acf15e214087
+  shared_preferences_web: 141cce0c3ed1a1c5bf2a0e44f52d31eeb66e5ea9
+  sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
+  url_launcher: a1c0cc845906122c4784c542523d8cacbded5626
+  url_launcher_macos: fd7894421cd39320dce5f292fc99ea9270b2a313
+  url_launcher_web: e5527357f037c87560776e36436bf2b0288b965c
+
+PODFILE CHECKSUM: 7b79e867e6dd96a6e2cb8ce5bef0da24b50ffe3c
+
+COCOAPODS: 1.8.4
