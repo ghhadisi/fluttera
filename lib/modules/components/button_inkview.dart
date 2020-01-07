@@ -142,7 +142,6 @@ class _ButtonsPageState extends State<ButtonsPage> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-
       floatingActionButton: FloatingActionButton(
           child: Icon(
             Icons.add,
@@ -195,15 +194,21 @@ class _ButtonsPageState extends State<ButtonsPage> {
         )),
         Row(
           children: <Widget>[
-            RaisedButton.icon(icon: Icon(Icons.ac_unit), label: Text('RaisedButton'),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))), onPressed: () => {}),
-            FlatButton.icon(icon: Icon(Icons.ac_unit), label: Text('FlatButton'),
+            RaisedButton.icon(
+                icon: Icon(Icons.ac_unit),
+                label: Text('RaisedButton'),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30.0))),
+                onPressed: () => {}),
+            FlatButton.icon(
+                icon: Icon(Icons.ac_unit),
+                label: Text('FlatButton'),
                 padding: EdgeInsets.all(16.0),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(30.0))), onPressed: () => {}),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(30.0))),
+                onPressed: () => {}),
           ],
         ),
-
-
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -260,8 +265,7 @@ class _ButtonsPageState extends State<ButtonsPage> {
                   Text('RaisedButton')
                 ]),
                 textColor: Colors.deepPurple,
-                onPressed: () => {}
-                )
+                onPressed: () => {})
           ],
         ),
         SizedBox(height: 40),
@@ -389,16 +393,4 @@ class _ButtonsPageState extends State<ButtonsPage> {
   }
 }
 
-class _ButtonsPageState2 extends State<ButtonsPage> {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('buttons'),
-        actions: <Widget>[],
-      ),
-      body: Column(children: <Widget>[]),
-    );
-  }
-}
+

@@ -13,6 +13,7 @@ import 'lib/msg_engine.dart';
 import 'lib/picker/flutter_picker.dart';
 import 'lib/provider_page.dart';
 import 'lib/rx.dart';
+import 'lib/screenutil_page.dart';
 import 'lib/staggered_grid.dart';
 import 'lib/storage/storage.dart';
 import 'lib/url_launcher.dart';
@@ -179,6 +180,21 @@ class LibsPage extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+
+          Divider(),
+          //https://github.com/OpenFlutter/flutter_screenutil/
+          new ListTile(
+            title: Text('flutter_screenutil'),
+            subtitle: Text("屏幕适配"),
+            onTap: (){
+              _goModule(context,14);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -262,6 +278,12 @@ class LibsPage extends StatelessWidget {
       case 13:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return ProviderPage();
+        }));
+        break;
+
+      case 14:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return ScreenUtilPage();
         }));
         break;
     }

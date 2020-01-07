@@ -3,7 +3,7 @@ import 'dart:core' as prefix0;
 import 'dart:core';
 
 import 'package:dio/dio.dart';
-import 'package:flustars/flustars.dart';
+import 'package:flustars/flustars.dart' hide  ScreenUtil;
 import 'package:flutter/material.dart';
 import 'package:flutter_msg_engine/flutter_msg_engine.dart';
 import 'package:fluttera/main.dart';
@@ -16,6 +16,7 @@ import 'bean/user_entity2.dart';
 import 'modules/compoents.dart';
 import 'modules/http.dart';
 import 'modules/lib/image/image_picker.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class Modules extends StatefulWidget implements MsgProcHandler<String>  {
@@ -58,6 +59,7 @@ class _ModulesState extends State<Modules>{
 
   @override
   Widget build(BuildContext context) {
+
     // TODO: implement build
     return new MaterialApp(
         title: 'modules  flutter a',
@@ -102,6 +104,8 @@ class MyHomePage extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context, width: 1080, height: 1920, allowFontScaling: false);
+
     // TODO: implement build
     return new Scaffold(
       appBar: AppBar(
