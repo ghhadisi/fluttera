@@ -300,7 +300,7 @@ class Componets extends StatelessWidget {
 
           Divider(),
           new ListTile(
-            title: Text('听返回导航的 WillPopScope'),
+            title: Text('double back听返回导航的 WillPopScope'),
             subtitle: Text('菜设置在 1500ms 之内连续点击两次弹出提示框'),
             onTap: (){
               _goModule(context,27);

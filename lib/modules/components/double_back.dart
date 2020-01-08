@@ -17,8 +17,29 @@ class DoubleBackPage extends StatefulWidget {
   }
 }
 
-class DoubleBackPageState extends State<DoubleBackPage> {
+class DoubleBackPageState extends State<DoubleBackPage>   with WidgetsBindingObserver {
   var _lastPressedAt;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addObserver(this); //添加观察者
+
+  }
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // TODO: implement didChangeAppLifecycleState
+    super.didChangeAppLifecycleState(state);
+    print(state);
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    WidgetsBinding.instance.removeObserver(this); //销毁观察者
+
+  }
 
   @override
   Widget build(BuildContext context) {
