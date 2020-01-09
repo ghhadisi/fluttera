@@ -2,6 +2,7 @@ import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttera/list.dart';
 import 'package:fluttera/modules.dart';
+import 'package:fluttera/modules/lib/redux/ReduxState.dart';
 import 'package:fluttera/modules/navgation/HomePage.dart';
 
 import 'about.dart';
@@ -10,9 +11,15 @@ import 'modules/fluro/Application.dart';
 import 'modules/fluro/fluro_app.dart';
 import 'modules/fluro/routes.dart';
 
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+
 //void main() => runApp(MyApp());
 
-void main() => runApp(Modules());
+void main() {
+//  final store = new Store<ReduxState>(getReduce, initialState: ReduxState.init());
+  runApp(Modules());
+}
 
 //void main() => runApp(HomePage());
 

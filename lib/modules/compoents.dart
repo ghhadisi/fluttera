@@ -35,7 +35,15 @@ import 'components/tooltip.dart';
 import 'components/visibility_page.dart';
 import 'components/wrap.dart';
 
+/*
+///收起键盘 FocusScope.of(context).requestFocus(new FocusNode());
+主题色 Theme.of(context).primaryColor
+多语言Localizations.of(context, GSYLocalizations)
+通过 Redux 获取用户信息 StoreProvider.of(context).userInfo
 
+通过 Scope Model 获取用户信息 ScopedModel.of<UserInfo>(context).userInfo
+*
+* */
 class Componets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

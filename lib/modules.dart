@@ -3,7 +3,7 @@ import 'dart:core' as prefix0;
 import 'dart:core';
 
 import 'package:dio/dio.dart';
-import 'package:flustars/flustars.dart' hide  ScreenUtil;
+import 'package:flustars/flustars.dart' hide ScreenUtil;
 import 'package:flutter/material.dart';
 import 'package:flutter_msg_engine/flutter_msg_engine.dart';
 import 'package:fluttera/main.dart';
@@ -18,11 +18,14 @@ import 'modules/http.dart';
 import 'modules/lib/image/image_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'modules/lib/redux/ReduxState.dart';
 
-class Modules extends StatefulWidget implements MsgProcHandler<String>  {
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+
+class Modules extends StatefulWidget implements MsgProcHandler<String> {
   @override
   State<StatefulWidget> createState() {
-
     MsgEngine.instance.register(this, 150);
 
     // TODO: implement createState
@@ -34,10 +37,11 @@ class Modules extends StatefulWidget implements MsgProcHandler<String>  {
     // TODO: implement processMsg
     print("MyApp: " + msg.data);
   }
-
 }
 
-class _ModulesState extends State<Modules>{
+class _ModulesState extends State<Modules> {
+  final store =
+      new Store<ReduxState>(getReduce, initialState: ReduxState.init());
 
   @override
   void initState() {
@@ -51,7 +55,6 @@ class _ModulesState extends State<Modules>{
     });
   }
 
-
   @override
   void dispose() {
     MsgEngine.instance.stop();
@@ -59,34 +62,84 @@ class _ModulesState extends State<Modules>{
 
   @override
   Widget build(BuildContext context) {
-
     // TODO: implement build
-    return new MaterialApp(
-        title: 'modules  flutter a',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
+//    return new MaterialApp(
+//        title: 'modules  flutter a',
+//        theme: ThemeData(
+//          primarySwatch: Colors.blue,
+////        brightness: Brightness.dark,
+//          primaryColor: Colors.lightBlue[800],
+//          accentColor: Colors.cyan[600],
+//        ),
+////      onGenerateRoute: ,
+////    initialRoute: ,
+////    routes: ,
+////        home: MyHomePage()
+//
+////        home: Provider<String>.value(value: "aaaaa",child: MyHomePage(),)
+//        home: MultiProvider(providers: [
+//          Provider<String>.value(value:'aaaaa'),
+//
+//          Provider<int>.value(value:123),
+//
+//        ],child: MyHomePage(),),
+//
+//
+//
+//    );
+    return StoreProvider(
+      store: store,
+      child: StoreBuilder<ReduxState>(
+        builder: (BuildContext context, Store<ReduxState> store) {
+          return new MaterialApp(
+            title: 'modules  flutter a',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
 //        brightness: Brightness.dark,
-          primaryColor: Colors.lightBlue[800],
-          accentColor: Colors.cyan[600],
-        ),
+              primaryColor: Colors.lightBlue[800],
+              accentColor: Colors.cyan[600],
+            ),
 //      onGenerateRoute: ,
 //    initialRoute: ,
 //    routes: ,
 //        home: MyHomePage()
 
 //        home: Provider<String>.value(value: "aaaaa",child: MyHomePage(),)
-        home: MultiProvider(providers: [
-          Provider<String>.value(value:'aaaaa'),
+            home: MultiProvider(
+              providers: [
+                Provider<String>.value(value: 'aaaaa'),
+                Provider<int>.value(value: 123),
+              ],
+              child: MyHomePage(),
+            ),
+          );
+        },
+      ),
+    );
 
-          Provider<int>.value(value:123),
+    return new MaterialApp(
+      title: 'modules  flutter a',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+//        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
+        accentColor: Colors.cyan[600],
+      ),
+//      onGenerateRoute: ,
+//    initialRoute: ,
+//    routes: ,
+//        home: MyHomePage()
 
-        ],child: MyHomePage(),),
-
-
-
+//        home: Provider<String>.value(value: "aaaaa",child: MyHomePage(),)
+      home: MultiProvider(
+        providers: [
+          Provider<String>.value(value: 'aaaaa'),
+          Provider<int>.value(value: 123),
+        ],
+        child: MyHomePage(),
+      ),
     );
   }
-
 
   void _initAsync() async {
     await SpUtil.getInstance();
@@ -94,17 +147,14 @@ class _ModulesState extends State<Modules>{
     _init();
   }
 
-  void _init() {
-
-  }
+  void _init() {}
 }
-class MyHomePage extends StatelessWidget{
 
-
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 1080, height: 1920, allowFontScaling: false);
+    ScreenUtil.init(context,
+        width: 1080, height: 1920, allowFontScaling: false);
 
     // TODO: implement build
     return new Scaffold(
@@ -112,79 +162,71 @@ class MyHomePage extends StatelessWidget{
         title: Text('home'),
         backgroundColor: Colors.red,
         leading: IconButton(
-          icon: Icon(Icons.menu,),
+          icon: Icon(
+            Icons.menu,
+          ),
           tooltip: "search",
-          onPressed: (){
+          onPressed: () {
             print('Search Pressed');
           },
         ),
-
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.more_horiz),
               tooltip: "more_horiz",
-              onPressed: (){
+              onPressed: () {
                 print('more_horiz Pressed');
-              }
-          ),
+              }),
         ],
       ),
       body: new ListView(
         children: <Widget>[
-          Text('provide str = ${Provider.of<String>(context)}  int = ${Provider.of<int>(context)}'),
+          Text(
+              'provide str = ${Provider.of<String>(context)}  int = ${Provider.of<int>(context)}'),
           new ListTile(
-
             title: Text('http module'),
-            onTap: (){
-                _goModule(context,1);
+            onTap: () {
+              _goModule(context, 1);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
 //                return HttpModule();
 //              }));
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
-
           new ListTile(
-
             title: Text('io module'),
-            onTap: (){
-              _goModule(context,2);
+            onTap: () {
+              _goModule(context, 2);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
 //                return HttpModule();
 //              }));
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
-
           new ListTile(
-
             title: Text('get battery module'),
-            onTap: (){
-              _goModule(context,3);
+            onTap: () {
+              _goModule(context, 3);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
 //                return HttpModule();
 //              }));
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
-
           new ListTile(
-
             title: Text('常用库'),
-            onTap: (){
-              _goModule(context,4);
+            onTap: () {
+              _goModule(context, 4);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
 //                return HttpModule();
 //              }));
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
-
           new ListTile(
-
             title: Text('components'),
-            onTap: (){
-              _goModule(context,5);
+            onTap: () {
+              _goModule(context, 5);
 //              Navigator.push(context,new MaterialPageRoute(builder: ( context){
 //                return HttpModule();
 //              }));
@@ -193,32 +235,35 @@ class MyHomePage extends StatelessWidget{
           ),
         ],
       ),
-
     );
   }
 
-
-  void _goModule(context,int index){
-
-    switch(index){
+  void _goModule(context, int index) {
+    switch (index) {
       case 1:
-        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+        Navigator.push(context,
+            new MaterialPageRoute(builder: (BuildContext context) {
           return HttpModule();
         }));
         break;
       case 2:
-        Navigator.push(context, new MaterialPageRoute(builder: (context )=>IoModule()));
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (context) => IoModule()));
         break;
       case 3:
-        Navigator.push(context, new MaterialPageRoute(builder: (context)=>NativeModule()));
+        Navigator.push(context,
+            new MaterialPageRoute(builder: (context) => NativeModule()));
         break;
 
       case 4:
-        Navigator.push(context, new MaterialPageRoute(builder: (context)=>LibsPage()));
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (context) => LibsPage()));
         break;
       case 5:
-        Navigator.push(context, new MaterialPageRoute(builder: (context)=>Componets()));
+        Navigator.push(
+            context, new MaterialPageRoute(builder: (context) => Componets()));
         break;
+
     }
   }
 }

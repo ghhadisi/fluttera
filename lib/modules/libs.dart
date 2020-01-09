@@ -12,6 +12,7 @@ import 'lib/flustars.dart';
 import 'lib/msg_engine.dart';
 import 'lib/picker/flutter_picker.dart';
 import 'lib/provider_page.dart';
+import 'lib/redux/redux_one_page.dart';
 import 'lib/rx.dart';
 import 'lib/screenutil_page.dart';
 import 'lib/staggered_grid.dart';
@@ -195,6 +196,22 @@ class LibsPage extends StatelessWidget {
             },
             contentPadding: EdgeInsets.only(left: 20),
           ),
+
+
+          Divider(),
+          //https://pub.dev/packages/flutter_redux#-readme-tab-
+          //https://blog.csdn.net/xcf111/article/details/90752577
+          new ListTile(
+            title: Text('redux'),
+            subtitle: Text("Store位于整个APP的顶层，存储和管理state；Action简单点就是动作，通过发起一个Action来告诉Reducer该更新状态了；Reducer根据Action产生新的状态；"),
+            onTap: (){
+              _goModule(context,15);
+//              Navigator.push(context,new MaterialPageRoute(builder: ( context){
+//                return HttpModule();
+//              }));
+            },
+            contentPadding: EdgeInsets.only(left: 20),
+          ),
         ],
       ),
     );
@@ -284,6 +301,11 @@ class LibsPage extends StatelessWidget {
       case 14:
         Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
           return ScreenUtilPage();
+        }));
+        break;
+      case 15:
+        Navigator.push(context,new MaterialPageRoute(builder: (BuildContext context){
+          return ReduxOnePage();
         }));
         break;
     }
